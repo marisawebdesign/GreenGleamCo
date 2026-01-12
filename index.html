@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2D5A3D;
-            --accent-green: #4A7C59;
-            --light-green: #E8F5E9;
-            --gold: #C4A052;
+            --primary-green: #8FAF93;
+            --accent-green: #D4ECDD;
+            --light-green: #D4ECDD;
+            --outline-accent: #B9D9BF;
+            --gold: #8FAF93;
             --cream: #FAFAF7;
             --white: #FFFFFF;
             --dark: #1A1A1A;
@@ -44,7 +45,7 @@
         /* Navigation */
         .navbar {
             background: var(--white);
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -53,95 +54,174 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
-        .logo { display: flex; align-items: center; gap: 15px; }
-        .logo img { height: 65px; border-radius: 50%; }
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--primary-green); font-weight: 600; }
-        .logo-text span { color: var(--accent-green); }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 70px; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--dark); font-weight: 500; }
+        .logo-text span { display: block; font-size: 12px; color: var(--gray); font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 
-        .nav-menu { display: flex; align-items: center; gap: 35px; list-style: none; }
+        .nav-menu { display: flex; align-items: center; gap: 10px; list-style: none; }
         .nav-menu a {
             text-decoration: none;
             color: var(--dark);
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-green);
+            transition: all 0.3s;
+            text-transform: uppercase;
         }
-        .nav-menu a:hover { color: var(--accent-green); }
-        .nav-btn {
+        .nav-menu a.active,
+        .nav-menu a:hover {
             background: var(--primary-green);
-            color: var(--white) !important;
-            padding: 14px 32px;
-            border-radius: 4px;
+            color: var(--white);
+        }
+        .nav-btn {
+            background: var(--white) !important;
+            color: var(--dark) !important;
+            padding: 12px 25px;
+            border: 2px solid var(--dark) !important;
             font-weight: 600;
             transition: all 0.3s;
         }
-        .nav-btn:hover { background: var(--accent-green); }
+        .nav-btn:hover { background: var(--dark) !important; color: var(--white) !important; }
 
         /* Hero Section */
         .hero {
             position: relative;
-            min-height: 100vh;
-            display: flex;
+            min-height: 550px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(45,90,61,0.92) 0%, rgba(74,124,89,0.85) 100%),
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(143,175,147,0.15) 0%, rgba(212,236,221,0.2) 100%),
+                        url('https://www.gocalaveras.com/wp-content/uploads/2016/05/dogwood-road2.jpg') center/cover;
+            color: var(--dark);
+            padding: 60px 5%;
         }
-        .hero-content { max-width: 900px; }
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .hero-image-container img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .hero-content {
+            max-width: 550px;
+            padding: 40px;
+        }
         .hero-label {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
+            display: none;
         }
         .hero h1 {
-            font-size: 72px;
-            line-height: 1.1;
-            margin-bottom: 25px;
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 30px;
             font-weight: 500;
+            font-style: italic;
+            color: var(--dark);
         }
         .hero p {
-            font-size: 20px;
+            font-size: 16px;
             line-height: 1.8;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto 45px;
+            max-width: 500px;
+            margin-bottom: 30px;
+            color: var(--gray);
+            display: none;
         }
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
         .btn-primary {
-            background: var(--gold);
+            background: transparent;
             color: var(--dark);
-            padding: 18px 45px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--dark);
         }
-        .btn-primary:hover { background: transparent; color: var(--white); }
+        .btn-primary:hover { background: var(--dark); color: var(--white); }
         .btn-outline {
             background: transparent;
-            color: var(--white);
-            padding: 18px 45px;
+            color: var(--dark);
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--dark);
+            transition: all 0.3s;
+            display: none;
+        }
+        .btn-outline:hover { background: var(--dark); color: var(--white); }
+        .hero-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            text-decoration: none;
             font-size: 14px;
+            margin-top: 10px;
+        }
+        .hero-phone svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--dark);
+        }
+
+        /* Luxury Experience Section */
+        .luxury-section {
+            background: var(--primary-green);
+            text-align: center;
+            padding: 80px 5%;
+            color: var(--white);
+        }
+        .luxury-section h2 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        .luxury-section h2 span {
+            font-size: 18px;
+            display: block;
+            letter-spacing: 8px;
+            margin-top: 5px;
+        }
+        .luxury-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn-luxury {
+            display: inline-block;
+            background: transparent;
+            color: var(--white);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
             letter-spacing: 1px;
             text-transform: uppercase;
             border: 2px solid var(--white);
             transition: all 0.3s;
         }
-        .btn-outline:hover { background: var(--white); color: var(--primary-green); }
+        .btn-luxury:hover {
+            background: var(--white);
+            color: var(--primary-green);
+        }
 
         /* Location Banner */
         .location-banner {
@@ -149,7 +229,7 @@
             text-align: center;
             padding: 20px;
             font-size: 18px;
-            color: var(--primary-green);
+            color: var(--dark);
             font-weight: 500;
         }
 
@@ -212,7 +292,7 @@
 
         /* Quote Box */
         .quote-section {
-            background: var(--primary-green);
+            background: var(--outline-accent);
             padding: 70px 60px;
             position: relative;
         }
@@ -223,14 +303,14 @@
             position: absolute;
             top: -30px;
             left: 40px;
-            color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.3);
             line-height: 1;
         }
         .quote-section p {
             font-family: 'Playfair Display', serif;
             font-size: 26px;
             font-style: italic;
-            color: var(--white);
+            color: var(--dark);
             line-height: 1.6;
             position: relative;
             z-index: 1;
@@ -238,8 +318,9 @@
         .quote-author {
             margin-top: 25px;
             font-size: 14px;
-            color: var(--gold);
+            color: var(--dark);
             letter-spacing: 2px;
+            opacity: 0.8;
         }
 
         /* Services Section */
@@ -375,7 +456,7 @@
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(45,90,61,0.95), transparent 60%);
+            background: linear-gradient(to top, rgba(143,175,147,0.95), transparent 60%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -390,7 +471,7 @@
             margin-bottom: 5px;
         }
         .gallery-overlay p {
-            color: var(--gold);
+            color: var(--dark);
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -400,7 +481,8 @@
         .founder-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 600px;
+            min-height: 500px;
+            background: var(--white);
         }
         .founder-content {
             padding: 80px 60px;
@@ -410,49 +492,52 @@
             background: var(--white);
         }
         .founder-content h2 {
-            font-size: 42px;
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+        .founder-content h3.founder-name {
+            font-size: 28px;
             color: var(--primary-green);
-            margin-bottom: 25px;
+            margin-bottom: 5px;
+        }
+        .founder-content .founder-title {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
         .founder-content p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.9;
             color: var(--gray);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .founder-btn {
             display: inline-block;
             margin-top: 20px;
-            color: var(--accent-green);
+            color: var(--primary-green);
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             letter-spacing: 1px;
         }
         .founder-image {
-            background: linear-gradient(rgba(45,90,61,0.1), rgba(45,90,61,0.1)),
-                        url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80') center/cover;
-            position: relative;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
         }
-        .founder-image-card {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            background: var(--white);
-            padding: 25px 35px;
-            border-radius: 8px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        .founder-image-card h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--primary-green);
-        }
-        .founder-image-card span {
-            font-size: 13px;
-            color: var(--accent-green);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .founder-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--outline-accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         /* Promise Section */
@@ -513,7 +598,7 @@
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, rgba(45,90,61,0.95), rgba(74,124,89,0.9)),
+            background: linear-gradient(135deg, rgba(143,175,147,0.95), rgba(185,217,191,0.9)),
                         url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80') center/cover fixed;
             padding: 120px 5%;
             text-align: center;
@@ -529,6 +614,15 @@
             margin: 0 auto 45px;
             opacity: 0.95;
             line-height: 1.8;
+        }
+        .cta-section .btn-primary {
+            background: var(--white);
+            color: var(--primary-green);
+            border-color: var(--white);
+        }
+        .cta-section .btn-primary:hover {
+            background: transparent;
+            color: var(--white);
         }
 
         /* Footer */
@@ -610,10 +704,14 @@
             .services-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-image-container { order: 1; }
+            .hero-content { order: 2; text-align: center; margin: 0 auto; }
+            .hero-buttons { align-items: center; }
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .hero h1 { font-size: 42px; }
+            .hero h1 { font-size: 32px; }
             .about-section, .founder-section { grid-template-columns: 1fr; }
             .about-image, .founder-image { min-height: 350px; }
             .about-content, .founder-content { padding: 50px 30px; }
@@ -621,6 +719,7 @@
             .footer-grid { grid-template-columns: 1fr; }
             .top-bar { flex-direction: column; gap: 10px; text-align: center; }
             .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-image-container img { max-height: 300px; }
         }
     </style>
 </head>
@@ -637,29 +736,42 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
-            <img src="https://i.imgur.com/rc4j0XO.png" alt="The Green Gleam Logo">
-            <div class="logo-text">The Green <span>Gleam</span></div>
+            <img src="images/green-gleam-logo.png" alt="The Green Gleam Logo">
+            <div class="logo-text">
+                <span>Cleaning Co.</span>
+            </div>
         </div>
         <ul class="nav-menu">
-            <li><a href="#services">Services</a></li>
+            <li><a href="#" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="nav-btn">Book Now</a></li>
+            <li><a href="#" class="nav-btn">Join Our Client Waitlist</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-image-container">
+            <img src="images/hero-towel-spray.jpg" alt="The Green Gleam cleaning products">
+        </div>
         <div class="hero-content">
-            <span class="hero-label">✦ Eco-Friendly Luxury Cleaning ✦</span>
-            <h1>LUXURY Cleaning Solutions</h1>
-            <p>Experience the pinnacle of sophistication and pristine cleanliness with our tailored eco-friendly cleaning solutions. Elevate your space with our unparalleled attention to detail and commitment to your health.</p>
+            <h1>SPOTLESS CLEAN,<br>EVERY TIME</h1>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get A Quote Now</a>
-                <a href="#services" class="btn-outline">Our Services</a>
+                <a href="#about" class="btn-primary">See Why We're Different</a>
+                <a href="tel:555-GREEN-01" class="hero-phone">
+                    <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                    (555) 555-5555
+                </a>
             </div>
         </div>
+    </section>
+
+    <!-- Luxury Experience Section -->
+    <section class="luxury-section">
+        <h2>A LUXURY <span>EXPERIENCE</span></h2>
+        <p>From start to finish.</p>
+        <a href="#contact" class="btn-luxury">Get A Free Quote</a>
     </section>
 
     <!-- Location Banner -->
@@ -796,18 +908,14 @@
 
     <!-- Founder Section -->
     <section class="founder-section">
-        <div class="founder-content">
-            <span class="section-tag">Meet The Founder</span>
-            <h2>Founder, Advocate for Healthy Homes</h2>
-            <p>With a deep commitment to health-conscious living and environmental stewardship, Joyce founded The Green Gleam to prove that exceptional cleaning doesn't require toxic chemicals.</p>
-            <p>After witnessing the harmful effects of conventional cleaning products on her own family's health, Joyce dedicated herself to researching and sourcing the safest, most effective plant-based alternatives. Today, The Green Gleam stands as a testament to her belief that everyone deserves a clean, healthy home.</p>
-            <a href="#" class="founder-btn">More About The Green Gleam →</a>
-        </div>
         <div class="founder-image">
-            <div class="founder-image-card">
-                <h4>Joyce</h4>
-                <span>Founder & Owner</span>
-            </div>
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Joyce - Founder">
+        </div>
+        <div class="founder-content">
+            <h2>MEET THE OWNER</h2>
+            <h3 class="founder-name">JOYCE</h3>
+            <p class="founder-title">Founder, Owner</p>
+            <p>With an eye for detail and a deep appreciation for refined, well-kept spaces, Joyce turned her lifelong passion for cleanliness and organization into The Green Gleam Co. Her vision was simple: to elevate the everyday cleaning experience into something more.</p>
         </div>
     </section>
 
@@ -864,7 +972,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="https://i.imgur.com/rc4j0XO.png" alt="The Green Gleam">
+                    <img src="images/green-gleam-logo.png" alt="The Green Gleam">
                     <span>The Green Gleam</span>
                 </div>
                 <p>Elevate your space with eco-friendly luxury. We deliver pristine results using only the safest, plant-based cleaning solutions that protect your family and our planet.</p>
