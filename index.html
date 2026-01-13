@@ -289,6 +289,20 @@
             padding: 20px;
             animation: scaleIn 0.8s ease-out 0.2s both;
         }
+        /* Subtle blur transition on right edge */
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4));
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 2;
+            pointer-events: none;
+        }
         .hero-image-container img {
             width: 100%;
             height: 100%;
@@ -317,11 +331,12 @@
             font-size: 52px;
             line-height: 1.15;
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight: 500;
             font-style: normal;
             color: var(--dark);
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+            text-transform: uppercase;
         }
         .hero h1 .emphasis {
             font-style: italic;
@@ -458,19 +473,13 @@
             animation: luxuryFadeIn 0.9s ease-out forwards;
         }
         .luxury-section h2 {
-            font-size: 62px;
+            font-size: 72px;
             font-weight: 500;
-            margin-bottom: 15px;
-            letter-spacing: 4px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .luxury-section h2 span {
-            font-size: 20px;
-            display: block;
-            letter-spacing: 10px;
-            margin-top: 8px;
-            font-weight: 300;
-            opacity: 0.85;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
         .luxury-section p.luxury-tagline {
             font-size: 22px;
@@ -1033,9 +1042,9 @@
             .award-icon { width: 16px; height: 16px; }
             .award-text { max-width: 65px; }
             .award-divider { height: 16px; }
-            .luxury-section h2 { font-size: 48px; }
-            .luxury-section h2 span { font-size: 16px; letter-spacing: 6px; }
+            .luxury-section h2 { font-size: 52px; letter-spacing: 5px; }
             .luxury-section p.luxury-tagline { font-size: 18px; }
+            .hero-image-wrapper::after { display: none; }
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; }
@@ -1043,7 +1052,8 @@
             .navbar { padding: 0 15px 0 0; }
             .hero-image-container { min-height: 350px; }
             .hero-image-wrapper { padding: 12px; }
-            .hero h1 { font-size: 32px; letter-spacing: 1px; }
+            .hero-image-wrapper::after { display: none; }
+            .hero h1 { font-size: 28px; letter-spacing: 2px; }
             .hero-subheading { font-size: 13px; margin-bottom: 25px; }
             .hero-content { padding: 35px 20px; }
             .about-section, .founder-section { grid-template-columns: 1fr; }
@@ -1057,8 +1067,7 @@
             .btn-dark { padding: 16px 32px; font-size: 13px; }
             .btn-contact { padding: 12px 28px; font-size: 12px; }
             .luxury-section { padding: 70px 5%; }
-            .luxury-section h2 { font-size: 38px; }
-            .luxury-section h2 span { font-size: 14px; letter-spacing: 5px; }
+            .luxury-section h2 { font-size: 32px; letter-spacing: 3px; white-space: normal; }
             .luxury-section p.luxury-tagline { font-size: 16px; }
             .luxury-eco-text { font-size: 14px; }
         }
@@ -1158,7 +1167,7 @@
     <!-- Luxury Experience Section -->
     <section class="luxury-section">
         <div class="luxury-content">
-            <h2>A LUXURY <span>EXPERIENCE</span></h2>
+            <h2>A Luxury Experience</h2>
             <p class="luxury-tagline">From start to finish.</p>
             <p class="luxury-eco-text">Not sure if your existing cleaning regime meets our high standard for health safety and eco standards? Try our interactive product tool.</p>
             <a href="#contact" class="btn-luxury">
