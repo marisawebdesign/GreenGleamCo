@@ -303,23 +303,20 @@
             padding: 20px;
             animation: scaleIn 0.8s ease-out 0.2s both;
         }
-        /* Seamless blur transition on right edge - wide, gentle fade with minimal blur */
+        /* Seamless blur transition on right edge - narrow, subtle fade for clean blend */
         .hero-image-wrapper::after {
             content: '';
             position: absolute;
             top: 0;
             right: -1px;
-            width: 200px;
+            width: 60px;
             height: 100%;
             background: linear-gradient(to right,
                 transparent 0%,
-                rgba(250,250,247,0.1) 20%,
-                rgba(250,250,247,0.3) 40%,
-                rgba(250,250,247,0.5) 60%,
-                rgba(250,250,247,0.75) 80%,
+                rgba(250,250,247,0.15) 40%,
+                rgba(250,250,247,0.5) 70%,
+                rgba(250,250,247,0.85) 90%,
                 rgba(250,250,247,1) 100%);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
             z-index: 2;
             pointer-events: none;
         }
@@ -494,6 +491,8 @@
             color: var(--white);
             overflow: hidden;
             position: relative;
+            border-top: 1.5px solid #02806A;
+            border-bottom: 1.5px solid #02806A;
         }
         /* Blur transition at top of luxury section for seamless hero blend */
         .luxury-section::before {
