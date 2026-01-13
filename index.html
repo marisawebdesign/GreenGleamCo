@@ -489,10 +489,11 @@
             text-align: center;
             padding: 40px 5% 60px 5%;
             color: var(--white);
-            overflow: hidden;
+            overflow: visible;
             position: relative;
-            border-top: 1.5px solid #02806A;
-            border-bottom: 1.5px solid #02806A;
+            box-shadow:
+                inset 0 1.5px 0 0 #02806A,
+                inset 0 -1.5px 0 0 #02806A;
         }
         /* Blur transition at top of luxury section for seamless hero blend */
         .luxury-section::before {
