@@ -315,27 +315,26 @@
             padding: 20px;
             animation: scaleIn 0.8s ease-out 0.2s both;
         }
-        /* Seamless blur transition on right edge - softer left edge */
+        /* Seamless blur transition on right edge - narrower blur */
         .hero-image-wrapper::after {
             content: '';
             position: absolute;
             top: 0;
             right: -1px;
-            width: 180px;
+            width: 80px;
             height: 100%;
             background: linear-gradient(to right,
                 transparent 0%,
-                rgba(250,250,247,0.05) 20%,
-                rgba(250,250,247,0.15) 40%,
-                rgba(250,250,247,0.35) 60%,
-                rgba(250,250,247,0.6) 80%,
-                rgba(250,250,247,0.85) 100%);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+                rgba(250,250,247,0.2) 30%,
+                rgba(250,250,247,0.5) 60%,
+                rgba(250,250,247,0.8) 85%,
+                rgba(250,250,247,0.95) 100%);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             z-index: 2;
             pointer-events: none;
-            mask-image: linear-gradient(to right, transparent 0%, transparent 10%, black 50%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 10%, black 50%);
+            mask-image: linear-gradient(to right, transparent 0%, black 40%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
         }
         .hero-image-container img {
             width: 100%;
