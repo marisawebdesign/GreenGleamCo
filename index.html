@@ -279,22 +279,15 @@
             position: relative;
             padding: 0;
         }
-        /* Dark green overlay container - fills the entire left half */
+        /* Dark green overlay container - fills the entire left half with frame effect */
         .hero-image-wrapper {
             position: relative;
             display: flex;
             width: 100%;
             height: 100%;
-            animation: scaleIn 0.8s ease-out 0.2s both;
-        }
-        .hero-image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 20px;
             background: rgba(58, 82, 62, 0.5);
-            border-radius: 14px;
-            z-index: 1;
-            animation: fadeInOverlay 0.6s ease-out 0.4s both;
+            padding: 20px;
+            animation: scaleIn 0.8s ease-out 0.2s both;
         }
         .hero-image-container img {
             width: 100%;
@@ -302,7 +295,8 @@
             object-fit: cover;
             object-position: center;
             position: relative;
-            z-index: 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         .hero-content {
             max-width: 650px;
@@ -1023,7 +1017,7 @@
             .hero { grid-template-columns: 1fr; min-height: auto; padding: 0; }
             .hero::after { display: none; }
             .hero-image-container { order: 1; min-height: 400px; }
-            .hero-image-wrapper::before { inset: 15px; }
+            .hero-image-wrapper { padding: 15px; }
             .hero-content { order: 2; text-align: center; margin: 0 auto; padding: 40px 5%; }
             .hero-buttons { align-items: center; }
             .hero h1 { font-size: 42px; }
@@ -1048,7 +1042,7 @@
             .header-center { display: none; }
             .navbar { padding: 0 15px 0 0; }
             .hero-image-container { min-height: 350px; }
-            .hero-image-wrapper::before { inset: 12px; }
+            .hero-image-wrapper { padding: 12px; }
             .hero h1 { font-size: 32px; letter-spacing: 1px; }
             .hero-subheading { font-size: 13px; margin-bottom: 25px; }
             .hero-content { padding: 35px 20px; }
