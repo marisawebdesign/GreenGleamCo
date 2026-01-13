@@ -744,65 +744,70 @@
             background: var(--white);
             padding: 80px 5%;
         }
-        .about-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: start;
-        }
-        .about-left {
-            padding-right: 20px;
-        }
-        .about-header-tag {
-            color: var(--primary-green);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
         .about-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
+            font-size: 18px;
             color: var(--dark);
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 500;
         }
         .about-headline {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 58px;
             font-style: italic;
             color: var(--dark);
-            line-height: 1.15;
-            margin-bottom: 40px;
+            line-height: 1.1;
             font-weight: 400;
         }
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .about-left {
+            padding-top: 20px;
+        }
         .about-text-box {
-            background: var(--cream);
-            padding: 40px;
-            margin-left: 30px;
+            background: var(--primary-green);
+            padding: 50px 45px;
         }
         .about-text-box p {
             font-size: 15px;
             line-height: 1.9;
-            color: var(--gray);
+            color: var(--white);
             margin: 0;
         }
         .about-right {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            position: relative;
+            height: 580px;
         }
-        .about-image-1,
-        .about-image-2 {
-            width: 100%;
-            height: 280px;
+        .about-image-1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 75%;
+            height: 320px;
             object-fit: cover;
-            border-radius: 4px;
+            z-index: 1;
+        }
+        .about-image-2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 320px;
+            object-fit: cover;
+            z-index: 2;
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.1);
         }
         .section-tag {
             color: var(--primary-green);
@@ -1250,9 +1255,9 @@
             .luxury-section h2 { font-size: 52px; letter-spacing: 5px; }
             .luxury-section p.luxury-tagline { font-size: 18px; }
             .hero-image-wrapper::after { display: none; }
-            .about-section h2 { font-size: 42px; letter-spacing: 5px; }
-            .about-headline { font-size: 38px; }
-            .about-image-1, .about-image-2 { height: 220px; }
+            .about-headline { font-size: 46px; }
+            .about-right { height: 480px; }
+            .about-image-1, .about-image-2 { height: 260px; }
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; }
@@ -1264,12 +1269,14 @@
             .hero h1 { font-size: 28px; letter-spacing: 2px; }
             .hero-subheading { font-size: 13px; margin-bottom: 25px; }
             .hero-content { padding: 35px 20px; }
-            .about-container { grid-template-columns: 1fr; }
-            .about-left { padding-right: 0; }
-            .about-section h2 { font-size: 36px; letter-spacing: 4px; }
+            .about-section { padding: 50px 5%; }
+            .about-header { margin-bottom: 30px; }
+            .about-section h2 { font-size: 14px; letter-spacing: 4px; }
             .about-headline { font-size: 32px; }
-            .about-text-box { margin-left: 0; padding: 30px; }
-            .about-right { margin-top: 30px; }
+            .about-container { grid-template-columns: 1fr; gap: 30px; }
+            .about-text-box { padding: 30px; }
+            .about-right { height: auto; position: static; display: flex; flex-direction: column; gap: 15px; }
+            .about-image-1, .about-image-2 { position: static; width: 100%; height: 250px; }
             .founder-section { grid-template-columns: 1fr; }
             .founder-image { min-height: 350px; }
             .founder-content { padding: 50px 30px; }
@@ -1448,11 +1455,12 @@
 
     <!-- About Section -->
     <section class="about-section" id="about">
+        <div class="about-header">
+            <h2>About Us</h2>
+            <p class="about-headline">We Clean Like<br>It's Our Own.</p>
+        </div>
         <div class="about-container">
             <div class="about-left">
-                <span class="about-header-tag">About Us</span>
-                <h2>About Us</h2>
-                <p class="about-headline">We Clean Like<br>It's Our Own.</p>
                 <div class="about-text-box">
                     <p>Green Gleam is a local woman owned eco friendly cleaning business that was founded purely based on personal experiences. As a former dermatology surgical tech, and someone with severe eczema, I struggled for years to find household products that did not cause harsh skin and breathing reactions for me or my sensitive boys and pets. I made a switch to green within my own house, and then I started researching how many people could benefit from this fantastic new way of chemical free life, most cleaning businesses still use ammonia and pure bleach. I would like to offer you as my neighbors an impeccable cleaning experience, without the abrasive solutions and offensive fumes. I do not break down services to charge more per cleaning, and I do not have a "check list". The motto is - if it's dirty clean it and my clients can attest to that. My goal is for you to walk into a flawlessly clean room in every corner of your home. Be well, from my family to yours.</p>
                 </div>
