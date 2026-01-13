@@ -285,19 +285,7 @@
             color: var(--dark);
             padding: 0;
         }
-        /* Vertical split line between hero image and content */
-        .hero::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 10%;
-            height: 80%;
-            width: 1px;
-            background: linear-gradient(to bottom, transparent, rgba(143,175,147,0.35) 15%, rgba(143,175,147,0.35) 85%, transparent);
-            transform-origin: top;
-            animation: growLine 1s ease-out 0.6s both;
-            z-index: 2;
-        }
+        /* Vertical split line removed for seamless blur transition */
         .hero-image-container {
             display: flex;
             justify-content: center;
@@ -315,26 +303,25 @@
             padding: 20px;
             animation: scaleIn 0.8s ease-out 0.2s both;
         }
-        /* Seamless blur transition on right edge - narrower blur */
+        /* Seamless blur transition on right edge - wide, gentle fade with minimal blur */
         .hero-image-wrapper::after {
             content: '';
             position: absolute;
             top: 0;
             right: -1px;
-            width: 80px;
+            width: 200px;
             height: 100%;
             background: linear-gradient(to right,
                 transparent 0%,
-                rgba(250,250,247,0.4) 25%,
-                rgba(250,250,247,0.7) 50%,
-                rgba(250,250,247,0.9) 75%,
+                rgba(250,250,247,0.1) 20%,
+                rgba(250,250,247,0.3) 40%,
+                rgba(250,250,247,0.5) 60%,
+                rgba(250,250,247,0.75) 80%,
                 rgba(250,250,247,1) 100%);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
             z-index: 2;
             pointer-events: none;
-            mask-image: linear-gradient(to right, transparent 0%, black 30%);
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
         }
         .hero-image-container img {
             width: 100%;
