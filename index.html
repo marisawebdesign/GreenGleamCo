@@ -253,61 +253,66 @@
             min-height: 580px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            align-items: center;
+            align-items: stretch;
             background: linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 100%),
                         url('https://i.imgur.com/GyGBXfU.jpeg') center/cover;
             color: var(--dark);
-            padding: 60px 5%;
+            padding: 0;
         }
         /* Vertical split line between hero image and content */
         .hero::after {
             content: '';
             position: absolute;
             left: 50%;
-            top: 15%;
-            height: 70%;
+            top: 10%;
+            height: 80%;
             width: 1px;
-            background: linear-gradient(to bottom, transparent, rgba(143,175,147,0.35) 20%, rgba(143,175,147,0.35) 80%, transparent);
+            background: linear-gradient(to bottom, transparent, rgba(143,175,147,0.35) 15%, rgba(143,175,147,0.35) 85%, transparent);
             transform-origin: top;
             animation: growLine 1s ease-out 0.6s both;
+            z-index: 2;
         }
         .hero-image-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
             position: relative;
+            padding: 0;
         }
-        /* Dark green overlay container */
+        /* Dark green overlay container - fills the entire left half */
         .hero-image-wrapper {
             position: relative;
-            display: inline-block;
+            display: flex;
+            width: 100%;
+            height: 100%;
             animation: scaleIn 0.8s ease-out 0.2s both;
         }
         .hero-image-wrapper::before {
             content: '';
             position: absolute;
-            inset: -15px -20px;
+            inset: 20px;
             background: rgba(58, 82, 62, 0.5);
             border-radius: 14px;
-            z-index: -1;
+            z-index: 1;
             animation: fadeInOverlay 0.6s ease-out 0.4s both;
         }
         .hero-image-container img {
-            max-width: 100%;
-            max-height: 480px;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: relative;
+            z-index: 0;
         }
         .hero-content {
             max-width: 650px;
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin: 0 auto;
             animation: slideInRight 0.8s ease-out 0.3s both;
         }
         .hero-label {
@@ -1015,10 +1020,11 @@
             .services-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .hero { grid-template-columns: 1fr; min-height: auto; padding: 40px 5%; }
+            .hero { grid-template-columns: 1fr; min-height: auto; padding: 0; }
             .hero::after { display: none; }
-            .hero-image-container { order: 1; }
-            .hero-content { order: 2; text-align: center; margin: 0 auto; }
+            .hero-image-container { order: 1; min-height: 400px; }
+            .hero-image-wrapper::before { inset: 15px; }
+            .hero-content { order: 2; text-align: center; margin: 0 auto; padding: 40px 5%; }
             .hero-buttons { align-items: center; }
             .hero h1 { font-size: 42px; }
             .hero-subheading { font-size: 14px; }
@@ -1041,16 +1047,17 @@
             .nav-menu { display: none; }
             .header-center { display: none; }
             .navbar { padding: 0 15px 0 0; }
+            .hero-image-container { min-height: 350px; }
+            .hero-image-wrapper::before { inset: 12px; }
             .hero h1 { font-size: 32px; letter-spacing: 1px; }
             .hero-subheading { font-size: 13px; margin-bottom: 25px; }
+            .hero-content { padding: 35px 20px; }
             .about-section, .founder-section { grid-template-columns: 1fr; }
             .about-image, .founder-image { min-height: 350px; }
             .about-content, .founder-content { padding: 50px 30px; }
             .gallery-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             .hero-buttons { flex-direction: column; align-items: center; }
-            .hero-image-container img { max-height: 320px; }
-            .hero-image-wrapper::before { inset: -10px -12px; }
             .logo img { height: 80px; }
             .btn-primary { padding: 18px 35px; font-size: 14px; }
             .btn-dark { padding: 16px 32px; font-size: 13px; }
