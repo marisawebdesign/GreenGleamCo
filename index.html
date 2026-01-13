@@ -589,241 +589,110 @@
             transform: rotate(10deg) scale(1.1);
         }
 
-        /* Nextdoor Rating Section - Compact and intuitive */
-        .nextdoor-section {
+        /* Community Ratings Section - All in One Row */
+        .community-ratings-section {
             background: var(--white);
-            padding: 25px 5%;
+            padding: 40px 5%;
             text-align: center;
             border-bottom: 1px solid rgba(143,175,147,0.15);
         }
-        .nextdoor-container {
-            max-width: 1100px;
+        .community-ratings-container {
+            max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: start;
         }
-        .nextdoor-badge {
+        .rating-column {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            min-width: 280px;
+            gap: 20px;
         }
-        .nextdoor-logo {
-            width: 40px;
-            height: 40px;
-            background: #00B246;
+        .rating-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        .rating-logo {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 24px;
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(0,178,70,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            flex-shrink: 0;
         }
-        .nextdoor-text h3 {
+        .nextdoor-logo {
+            background: #00B246;
+        }
+        .rating-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .rating-text h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 17px;
+            font-size: 18px;
             color: var(--dark);
-            margin-bottom: 2px;
+            margin: 0;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        .nextdoor-text p {
-            font-size: 11px;
+        .rating-checkmark {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        .rating-text p {
+            font-size: 12px;
             color: var(--gray);
             font-weight: 500;
             letter-spacing: 0.8px;
             text-transform: uppercase;
+            margin: 0;
         }
-        .nextdoor-stats {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            min-width: 150px;
-        }
-        .nextdoor-rating {
+        .rating-stats {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
-        .nextdoor-stars {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-        }
-        .nextdoor-star {
-            width: 22px;
-            height: 22px;
-            fill: #00B246;
-        }
-        .nextdoor-rating-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--primary-green);
-            line-height: 1;
-        }
-        .nextdoor-favorites {
+        .rating-display {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            position: relative;
+            gap: 8px;
         }
-        .nextdoor-fav-count-row {
+        .stars {
             display: flex;
             align-items: center;
-            gap: 6px;
         }
-        .nextdoor-count {
+        .rating-big-number {
             font-family: 'Playfair Display', serif;
-            font-size: 38px;
+            font-size: 48px;
             font-weight: 700;
-            color: #00B246;
             line-height: 1;
         }
-        .nextdoor-heart-icon {
-            width: 26px;
-            height: 26px;
-            fill: #00B246;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .nextdoor-label {
-            font-size: 11px;
+        .rating-label {
+            font-size: 12px;
             color: var(--gray);
             font-weight: 600;
             letter-spacing: 0.4px;
             text-transform: uppercase;
         }
-        .nextdoor-checkmark {
-            width: 18px;
-            height: 18px;
-            fill: #00B246;
-            margin-left: 4px;
-        }
-        .nextdoor-cta {
-            background: #00B246;
-            color: var(--white);
-            padding: 12px 28px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 2px solid transparent;
-        }
-        .nextdoor-cta:hover {
-            background: #009138;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,178,70,0.3);
-        }
-        .nextdoor-cta .heart-icon {
-            width: 16px;
-            height: 16px;
-            fill: var(--white);
-        }
-
-        /* HomeAdvisor Rating Section - Harmonious with Nextdoor */
-        .homeadvisor-section {
-            background: var(--white);
-            padding: 25px 5%;
-            text-align: center;
-            border-bottom: 1px solid rgba(143,175,147,0.15);
-        }
-        .homeadvisor-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        .homeadvisor-badge {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 280px;
-        }
-        .homeadvisor-logo {
-            width: 40px;
-            height: 40px;
-            background: #F68B1E;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(246,139,30,0.3);
-        }
-        .homeadvisor-logo svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--white);
-        }
-        .homeadvisor-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            color: var(--dark);
-            margin-bottom: 2px;
-            font-weight: 600;
-        }
-        .homeadvisor-text p {
-            font-size: 11px;
-            color: var(--gray);
-            font-weight: 500;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-        }
-        .homeadvisor-stats {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            min-width: 150px;
-        }
-        .homeadvisor-rating {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-        .homeadvisor-stars {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-        }
-        .homeadvisor-star {
-            width: 22px;
-            height: 22px;
-            fill: #F68B1E;
-        }
-        .homeadvisor-rating-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 34px;
-            font-weight: 600;
-            color: #F68B1E;
-            line-height: 1;
-        }
-        .homeadvisor-checkmark {
-            width: 18px;
-            height: 18px;
-            fill: #F68B1E;
-            margin-left: 4px;
-        }
-        .homeadvisor-cta {
-            background: #F68B1E;
+        .rating-cta {
             color: var(--white);
             padding: 16px 35px;
             text-decoration: none;
@@ -836,128 +705,16 @@
             align-items: center;
             gap: 8px;
             border: 2px solid transparent;
+            width: 100%;
+            justify-content: center;
         }
-        .homeadvisor-cta:hover {
-            background: #E07A10;
+        .rating-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(246,139,30,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
-        .homeadvisor-cta svg {
+        .rating-cta svg {
             width: 16px;
             height: 16px;
-            fill: var(--white);
-        }
-
-        /* Google Business Rating Section - Harmonious with Nextdoor & HomeAdvisor */
-        .google-business-section {
-            background: var(--white);
-            padding: 25px 5%;
-            text-align: center;
-            border-bottom: 1px solid rgba(143,175,147,0.15);
-        }
-        .google-business-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        .google-business-badge {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 280px;
-        }
-        .google-business-logo {
-            width: 40px;
-            height: 40px;
-            background: #4285F4;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(66,133,244,0.3);
-        }
-        .google-business-logo svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--white);
-        }
-        .google-business-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            color: var(--dark);
-            margin-bottom: 2px;
-            font-weight: 600;
-        }
-        .google-business-text p {
-            font-size: 11px;
-            color: var(--gray);
-            font-weight: 500;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-        }
-        .google-business-stats {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            min-width: 150px;
-        }
-        .google-business-rating {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-        .google-business-stars {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-        }
-        .google-business-star {
-            width: 22px;
-            height: 22px;
-            fill: #4285F4;
-        }
-        .google-business-rating-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 34px;
-            font-weight: 600;
-            color: #4285F4;
-            line-height: 1;
-        }
-        .google-business-checkmark {
-            width: 18px;
-            height: 18px;
-            fill: #4285F4;
-            margin-left: 4px;
-        }
-        .google-business-cta {
-            background: #4285F4;
-            color: var(--white);
-            padding: 16px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 2px solid transparent;
-        }
-        .google-business-cta:hover {
-            background: #3367D6;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(66,133,244,0.3);
-        }
-        .google-business-cta svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--white);
         }
 
         /* Location Banner */
@@ -1623,135 +1380,132 @@
         </div>
     </section>
 
-    <!-- Nextdoor Rating Section -->
-    <section class="nextdoor-section">
-        <div class="nextdoor-container">
-            <div class="nextdoor-badge">
-                <div class="nextdoor-logo">N</div>
-                <div class="nextdoor-text">
-                    <h3>Nextdoor Neighborhood Favorite
-                        <svg class="nextdoor-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
-                        </svg>
-                    </h3>
-                    <p>Top 10 • 5 Years Running</p>
+    <!-- Community Ratings Section - All Three In One Row -->
+    <section class="community-ratings-section">
+        <div class="community-ratings-container">
+            <!-- Nextdoor Rating Column -->
+            <div class="rating-column">
+                <div class="rating-badge">
+                    <div class="rating-logo nextdoor-logo">N</div>
+                    <div class="rating-text">
+                        <h3>Nextdoor Neighborhood Favorite
+                            <svg class="rating-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
+                            </svg>
+                        </h3>
+                        <p>Top 10 • 5 Years Running</p>
+                    </div>
                 </div>
-            </div>
-            <div class="nextdoor-stats">
-                <div class="nextdoor-favorites">
-                    <div class="nextdoor-fav-count-row">
-                        <span class="nextdoor-count">55</span>
-                        <svg class="nextdoor-heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div class="rating-stats">
+                    <div class="rating-display">
+                        <span class="rating-big-number" style="color: #00B246;">55</span>
+                        <svg style="width: 26px; height: 26px; fill: #00B246;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
                         </svg>
                     </div>
-                    <span class="nextdoor-label">Neighbors Recommend</span>
+                    <span class="rating-label">Neighbors Recommend</span>
                 </div>
-            </div>
-            <a href="https://nextdoor.com/pages/green-gleam-cranston-ri/" target="_blank" rel="noopener noreferrer" class="nextdoor-cta">
-                Our Community Reputation
-                <svg class="heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- HomeAdvisor Rating Section -->
-    <section class="homeadvisor-section">
-        <div class="homeadvisor-container">
-            <div class="homeadvisor-badge">
-                <div class="homeadvisor-logo">
+                <a href="https://nextdoor.com/pages/green-gleam-cranston-ri/" target="_blank" rel="noopener noreferrer" class="rating-cta" style="background: #00B246;">
+                    Our Community Reputation
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
+                        <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" fill="white"/>
                     </svg>
-                </div>
-                <div class="homeadvisor-text">
-                    <h3>HomeAdvisor Top Rated
-                        <svg class="homeadvisor-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
-                        </svg>
-                    </h3>
-                    <p>Verified Pro • Screened & Approved</p>
-                </div>
+                </a>
             </div>
-            <div class="homeadvisor-stats">
-                <div class="homeadvisor-rating">
-                    <div class="homeadvisor-stars">
-                        <svg class="homeadvisor-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="homeadvisor-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="homeadvisor-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="homeadvisor-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="homeadvisor-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+
+            <!-- HomeAdvisor Rating Column -->
+            <div class="rating-column">
+                <div class="rating-badge">
+                    <div class="rating-logo homeadvisor-logo" style="background: #F68B1E;">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" fill="white"/>
                         </svg>
                     </div>
-                    <span class="homeadvisor-rating-number">5.0</span>
+                    <div class="rating-text">
+                        <h3>HomeAdvisor Top Rated
+                            <svg class="rating-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z" fill="#F68B1E"/>
+                            </svg>
+                        </h3>
+                        <p>Verified Pro • Screened & Approved</p>
+                    </div>
                 </div>
-            </div>
-            <a href="https://www.homeadvisor.com/rated.GreenGleamLLC.102932845.html" target="_blank" rel="noopener noreferrer" class="homeadvisor-cta">
-                View Our Profile
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- Google Business Rating Section -->
-    <section class="google-business-section">
-        <div class="google-business-container">
-            <div class="google-business-badge">
-                <div class="google-business-logo">
+                <div class="rating-stats">
+                    <div class="rating-display">
+                        <div class="stars" style="gap: 2px;">
+                            <svg style="width: 22px; height: 22px; fill: #F68B1E;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #F68B1E;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #F68B1E;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #F68B1E;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #F68B1E;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                        </div>
+                        <span class="rating-big-number" style="color: #F68B1E;">5.0</span>
+                    </div>
+                </div>
+                <a href="https://www.homeadvisor.com/rated.GreenGleamLLC.102932845.html" target="_blank" rel="noopener noreferrer" class="rating-cta" style="background: #F68B1E;">
+                    Our Community Reputation
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" fill="white"/>
                     </svg>
-                </div>
-                <div class="google-business-text">
-                    <h3>Google Business
-                        <svg class="google-business-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
-                        </svg>
-                    </h3>
-                    <p>Verified • Trusted Local Business</p>
-                </div>
+                </a>
             </div>
-            <div class="google-business-stats">
-                <div class="google-business-rating">
-                    <div class="google-business-stars">
-                        <svg class="google-business-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="google-business-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="google-business-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="google-business-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
-                        </svg>
-                        <svg class="google-business-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+
+            <!-- Google Business Rating Column -->
+            <div class="rating-column">
+                <div class="rating-badge">
+                    <div class="rating-logo google-logo" style="background: #4285F4;">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="white"/>
                         </svg>
                     </div>
-                    <span class="google-business-rating-number">5.0</span>
+                    <div class="rating-text">
+                        <h3>Google Business
+                            <svg class="rating-checkmark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z" fill="#4285F4"/>
+                            </svg>
+                        </h3>
+                        <p>Verified • Trusted Local Business</p>
+                    </div>
                 </div>
+                <div class="rating-stats">
+                    <div class="rating-display">
+                        <div class="stars" style="gap: 2px;">
+                            <svg style="width: 22px; height: 22px; fill: #4285F4;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #4285F4;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #4285F4;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #4285F4;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg style="width: 22px; height: 22px; fill: #4285F4;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                        </div>
+                        <span class="rating-big-number" style="color: #4285F4;">5.0</span>
+                    </div>
+                </div>
+                <a href="#" class="rating-cta" style="background: #4285F4;">
+                    Our Community Reputation
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="white"/>
+                    </svg>
+                </a>
             </div>
-            <a href="#" class="google-business-cta">
-                View Our Profile
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                </svg>
-            </a>
         </div>
     </section>
 
