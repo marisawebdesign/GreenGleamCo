@@ -489,11 +489,8 @@
             text-align: center;
             padding: 40px 5% 60px 5%;
             color: var(--white);
-            overflow: visible;
+            overflow: hidden;
             position: relative;
-            box-shadow:
-                inset 0 1.5px 0 0 #02806A,
-                inset 0 -1.5px 0 0 #02806A;
         }
         /* Blur transition at top of luxury section for seamless hero blend */
         .luxury-section::before {
@@ -742,61 +739,78 @@
             font-weight: 500;
         }
 
-        /* About Section */
+        /* About Section - New Layout */
         .about-section {
+            background: var(--white);
+            padding: 80px 5%;
+        }
+        .about-container {
+            max-width: 1300px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 700px;
+            gap: 50px;
+            align-items: start;
         }
-        .about-image {
-            background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000&q=80') center/cover;
+        .about-left {
+            padding-right: 20px;
         }
-        .about-content {
-            padding: 80px 60px;
+        .about-header-tag {
+            color: var(--primary-green);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            color: var(--dark);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .about-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-style: italic;
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .about-text-box {
+            background: var(--cream);
+            padding: 40px;
+            margin-left: 30px;
+        }
+        .about-text-box p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--gray);
+            margin: 0;
+        }
+        .about-right {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            background: var(--cream);
+            gap: 15px;
+        }
+        .about-image-1,
+        .about-image-2 {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 4px;
         }
         .section-tag {
-            color: var(--accent-green);
-            font-size: 14px;
+            color: var(--primary-green);
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 20px;
-        }
-        .about-content h2 {
-            font-size: 48px;
-            color: var(--primary-green);
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-        .about-content p {
-            font-size: 16px;
-            line-height: 1.9;
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-        .signature-block { margin-top: 35px; display: flex; align-items: center; gap: 20px; }
-        .signature-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-green);
-        }
-        .signature-text h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--primary-green);
-            font-style: italic;
-        }
-        .signature-text span {
-            font-size: 13px;
-            color: var(--accent-green);
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         /* Quote Box */
@@ -1236,6 +1250,9 @@
             .luxury-section h2 { font-size: 52px; letter-spacing: 5px; }
             .luxury-section p.luxury-tagline { font-size: 18px; }
             .hero-image-wrapper::after { display: none; }
+            .about-section h2 { font-size: 42px; letter-spacing: 5px; }
+            .about-headline { font-size: 38px; }
+            .about-image-1, .about-image-2 { height: 220px; }
         }
         @media (max-width: 768px) {
             .nav-menu { display: none; }
@@ -1247,9 +1264,15 @@
             .hero h1 { font-size: 28px; letter-spacing: 2px; }
             .hero-subheading { font-size: 13px; margin-bottom: 25px; }
             .hero-content { padding: 35px 20px; }
-            .about-section, .founder-section { grid-template-columns: 1fr; }
-            .about-image, .founder-image { min-height: 350px; }
-            .about-content, .founder-content { padding: 50px 30px; }
+            .about-container { grid-template-columns: 1fr; }
+            .about-left { padding-right: 0; }
+            .about-section h2 { font-size: 36px; letter-spacing: 4px; }
+            .about-headline { font-size: 32px; }
+            .about-text-box { margin-left: 0; padding: 30px; }
+            .about-right { margin-top: 30px; }
+            .founder-section { grid-template-columns: 1fr; }
+            .founder-image { min-height: 350px; }
+            .founder-content { padding: 50px 30px; }
             .gallery-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             .hero-buttons { flex-direction: column; align-items: center; }
@@ -1425,18 +1448,18 @@
 
     <!-- About Section -->
     <section class="about-section" id="about">
-        <div class="about-image"></div>
-        <div class="about-content">
-            <span class="section-tag">Experience The Green Gleam Difference</span>
-            <h2>Where Luxury Meets Sustainability</h2>
-            <p>At The Green Gleam, we're not just about cleaning – we're about creating an experience that protects what matters most. Our commitment to perfection means your space not only looks immaculate but is genuinely free from harmful chemicals and toxins.</p>
-            <p>With our unwavering dedication to eco-conscious practices and reliability, you can rest assured that your home is in the safest hands. Experience the peace of mind that comes with truly clean, healthy spaces.</p>
-            <div class="signature-block">
-                <img src="https://www.providencejournal.com/gcdn/authoring/2018/11/09/NPRJ/ghows-PJ-7a3e6889-aeae-05a7-e053-0100007ff472-88d88c48.jpeg?width=1320&height=878&fit=crop&format=pjpg&auto=webp" alt="Joyce" class="signature-img">
-                <div class="signature-text">
-                    <h4>Joyce</h4>
-                    <span>Founder & Owner</span>
+        <div class="about-container">
+            <div class="about-left">
+                <span class="about-header-tag">About Us</span>
+                <h2>About Us</h2>
+                <p class="about-headline">We Clean Like<br>It's Our Own.</p>
+                <div class="about-text-box">
+                    <p>Green Gleam is a local woman owned eco friendly cleaning business that was founded purely based on personal experiences. As a former dermatology surgical tech, and someone with severe eczema, I struggled for years to find household products that did not cause harsh skin and breathing reactions for me or my sensitive boys and pets. I made a switch to green within my own house, and then I started researching how many people could benefit from this fantastic new way of chemical free life, most cleaning businesses still use ammonia and pure bleach. I would like to offer you as my neighbors an impeccable cleaning experience, without the abrasive solutions and offensive fumes. I do not break down services to charge more per cleaning, and I do not have a "check list". The motto is - if it's dirty clean it and my clients can attest to that. My goal is for you to walk into a flawlessly clean room in every corner of your home. Be well, from my family to yours.</p>
                 </div>
+            </div>
+            <div class="about-right">
+                <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2015/5/13/0/RX-HGMAG031_Block-Island-101-a-3x4.jpg.rend.hgtvcom.791.1055.85.suffix/1431532375747.webp" alt="Cozy home interior" class="about-image-2">
+                <img src="https://cdn.shopify.com/s/files/1/0339/3110/0219/files/How-To-Prep-Your-Dog-For-A-New-Baby-1.jpg?v=1658249828" alt="Family and pets" class="about-image-1">
             </div>
         </div>
     </section>
