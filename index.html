@@ -438,10 +438,30 @@
         }
         .luxury-section p.luxury-tagline {
             font-size: 22px;
-            margin-bottom: 0;
+            margin-bottom: 20px;
             opacity: 0.95;
             font-family: 'Playfair Display', serif;
             font-style: italic;
+        }
+        .btn-luxury-reviews {
+            display: inline-block;
+            background: var(--dark);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            margin-top: 5px;
+        }
+        .btn-luxury-reviews:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.35);
         }
         .luxury-eco-text {
             font-size: 15px;
@@ -2175,6 +2195,7 @@
         <div class="luxury-content">
             <h2>A Luxury Experience</h2>
             <p class="luxury-tagline">From start to finish.</p>
+            <a href="reviews.html" class="btn-luxury-reviews">See What Our Clients Are Saying</a>
         </div>
     </section>
 
