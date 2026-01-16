@@ -344,9 +344,84 @@
             font-size: 1rem;
         }
 
+        /* Research Summary */
+        .research-summary {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--cream) 100%);
+            border-radius: 16px;
+            border-left: 4px solid var(--primary-green);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .research-summary h3 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .research-summary p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .research-summary strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
         /* Science Section */
         .science-section {
             background: var(--white);
+        }
+
+        .science-grid-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .science-nav {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: var(--white);
+            border: 2px solid var(--primary-green);
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .science-nav:hover {
+            background: var(--primary-green);
+        }
+
+        .science-nav:hover svg {
+            fill: var(--white);
+        }
+
+        .science-nav svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-green);
+            transition: fill 0.3s ease;
+        }
+
+        .science-prev {
+            left: -20px;
+        }
+
+        .science-next {
+            right: -20px;
         }
 
         .science-grid {
@@ -1012,25 +1087,141 @@
                 gap: 25px;
             }
 
+            .research-summary {
+                padding: 25px 20px;
+                margin: 0 auto 40px;
+            }
+
+            .research-summary h3 {
+                font-size: 1.5rem;
+            }
+
+            .research-summary p {
+                font-size: 0.95rem;
+            }
+
+            .science-grid-container {
+                padding: 0 50px;
+                position: relative;
+            }
+
             .science-grid {
-                grid-template-columns: 1fr;
+                display: flex;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                gap: 20px;
+                padding: 20px 0;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                scroll-snap-type: x mandatory;
             }
 
-            .scent-carousel-container {
-                padding: 0 15px;
-            }
-
-            .carousel-nav {
+            .science-grid::-webkit-scrollbar {
                 display: none;
             }
 
+            .science-card {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+            }
+
+            .science-nav {
+                display: flex;
+                width: 40px;
+                height: 40px;
+            }
+
+            .science-prev {
+                left: 5px;
+            }
+
+            .science-next {
+                right: 5px;
+            }
+
+            .method-intro {
+                margin: 0 auto 40px;
+                padding: 0 10px;
+            }
+
+            .method-intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .method-intro p {
+                font-size: 0.95rem;
+            }
+
+            .method-logo-badge {
+                padding: 12px 20px;
+                margin-bottom: 20px;
+            }
+
+            .method-logo-badge span {
+                font-size: 0.75rem;
+            }
+
+            .method-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .method-feature {
+                font-size: 0.8rem;
+            }
+
+            .carousel-header {
+                margin-bottom: 30px;
+            }
+
+            .carousel-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-header p {
+                font-size: 0.85rem;
+            }
+
+            .scent-carousel-container {
+                padding: 0 50px;
+            }
+
+            .carousel-nav {
+                display: flex;
+                width: 40px;
+                height: 40px;
+            }
+
+            .carousel-prev {
+                left: 5px;
+            }
+
+            .carousel-next {
+                right: 5px;
+            }
+
             .scent-card {
-                flex: 0 0 260px;
+                flex: 0 0 80%;
             }
 
             .why-method {
                 grid-template-columns: 1fr;
-                padding: 35px 25px;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+
+            .why-method-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .why-method-content p {
+                font-size: 0.9rem;
+            }
+
+            .why-method-list li {
+                font-size: 0.85rem;
             }
 
             .footer-content {
@@ -1204,7 +1395,17 @@
             <p>Peer-reviewed studies from leading scientific journals reveal concerning findings about conventional cleaning products and their impact on human health.</p>
         </div>
 
-        <div class="science-grid">
+        <div class="research-summary">
+            <h3>The Bottom Line</h3>
+            <p>Recent scientific studies have uncovered alarming truths about the products many families use daily. Common household cleaners contain hundreds of volatile chemicals—including 193 classified as hazardous—that can linger in your home's air long after cleaning. These chemicals have been linked to increased asthma risk, respiratory problems, and even cancer. The good news? <strong>Green cleaning products emit nearly 8 times fewer toxic compounds</strong> and contain significantly fewer hazardous ingredients. By choosing plant-based, non-toxic alternatives like Method, we're not just cleaning your home—we're protecting your family's health and creating a safer living environment.</p>
+        </div>
+
+        <div class="science-grid-container">
+            <button class="science-nav science-prev" onclick="scrollScienceCarousel(-1)" aria-label="Previous research">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+
+            <div class="science-grid">
             <!-- Card 1: VOCs -->
             <div class="science-card">
                 <div class="science-icon">
@@ -1294,6 +1495,11 @@
                     </a>
                 </div>
             </div>
+        </div>
+
+            <button class="science-nav science-next" onclick="scrollScienceCarousel(1)" aria-label="Next research">
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+            </button>
         </div>
     </section>
 
@@ -1552,6 +1758,14 @@
         function toggleMobileMenu() {
             const headerRight = document.querySelector('.header-right');
             headerRight.classList.toggle('active');
+        }
+
+        // Science Carousel Functionality
+        function scrollScienceCarousel(direction) {
+            const scienceGrid = document.querySelector('.science-grid');
+            const cardWidth = scienceGrid.querySelector('.science-card').offsetWidth + 20; // card width + gap
+            const scrollAmount = cardWidth * direction;
+            scienceGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
 
         // Carousel Functionality
