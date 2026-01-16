@@ -383,6 +383,10 @@
             margin: 0 auto;
         }
 
+        .science-grid-nav-buttons {
+            display: none;
+        }
+
         .science-nav {
             display: none;
             position: absolute;
@@ -1374,6 +1378,15 @@
                 gap: 25px;
             }
 
+            .section-header {
+                padding: 0 20px;
+                margin: 0 auto 40px;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
             .research-summary {
                 padding: 25px 20px;
                 margin: 0 auto 40px;
@@ -1388,7 +1401,7 @@
             }
 
             .science-grid-container {
-                padding: 0 45px;
+                padding: 0 20px;
                 position: relative;
             }
 
@@ -1396,8 +1409,8 @@
                 display: flex;
                 overflow-x: auto;
                 scroll-behavior: smooth;
-                gap: 15px;
-                padding: 20px 5px;
+                gap: 20px;
+                padding: 20px 0 60px 0;
                 scrollbar-width: none;
                 -ms-overflow-style: none;
                 scroll-snap-type: x mandatory;
@@ -1408,34 +1421,41 @@
             }
 
             .science-card {
-                flex: 0 0 calc(100% - 10px);
-                max-width: calc(100% - 10px);
+                flex: 0 0 85%;
+                max-width: 85%;
                 scroll-snap-align: center;
                 scroll-snap-stop: always;
             }
 
-            .science-nav {
+            .science-prev, .science-next {
+                display: none !important;
+            }
+
+            .science-grid-nav-buttons {
                 display: flex;
-                width: 36px;
-                height: 36px;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
             }
 
-            .science-nav svg {
-                width: 20px;
-                height: 20px;
+            .science-grid-nav-buttons .science-nav {
+                display: flex;
+                width: 44px;
+                height: 44px;
+                position: static;
+                transform: none;
+                margin: 0;
             }
 
-            .science-prev {
-                left: 4px;
-            }
-
-            .science-next {
-                right: 4px;
+            .science-grid-nav-buttons .science-nav svg {
+                width: 22px;
+                height: 22px;
             }
 
             .method-intro {
                 margin: 0 auto 40px;
-                padding: 0 10px;
+                padding: 0 20px;
+                text-align: center;
             }
 
             .method-intro h2 {
@@ -1473,11 +1493,14 @@
 
             .comparison-section h3 {
                 font-size: 1.6rem;
+                padding: 0 20px;
+                text-align: center;
             }
 
             .comparison-intro {
                 font-size: 0.9rem;
                 margin-bottom: 25px;
+                padding: 0 20px;
             }
 
             .comparison-header {
@@ -1527,6 +1550,8 @@
 
             .carousel-header {
                 margin-bottom: 30px;
+                padding: 0 15px;
+                text-align: center;
             }
 
             .carousel-header h3 {
@@ -1989,7 +2014,15 @@
                     </a>
                 </div>
             </div>
-        </div>
+
+            <div class="science-grid-nav-buttons">
+                <button class="science-nav science-prev-mobile" onclick="scrollScienceCarousel(-1)" aria-label="Previous research">
+                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                <button class="science-nav science-next-mobile" onclick="scrollScienceCarousel(1)" aria-label="Next research">
+                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </button>
+            </div>
 
             <button class="science-nav science-next" onclick="scrollScienceCarousel(1)" aria-label="Next research">
                 <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
