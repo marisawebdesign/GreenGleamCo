@@ -513,33 +513,6 @@
             fill: currentColor;
         }
 
-        /* Key Stats */
-        .stats-banner {
-            background: var(--primary-green);
-            padding: 60px 40px;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            color: var(--primary-green);
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            color: var(--white);
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-        }
-
         /* Method Section */
         .method-section {
             background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
@@ -595,6 +568,148 @@
             width: 20px;
             height: 20px;
             fill: var(--primary-green);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .comparison-section h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .comparison-intro {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        .comparison-table {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--light-green);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-header .comparison-col {
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .comparison-header .ingredient-col {
+            text-align: left;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--light-green);
+            transition: background 0.3s ease;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row:hover {
+            background: rgba(143, 175, 147, 0.05);
+        }
+
+        .comparison-col {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .ingredient-col {
+            align-items: flex-start !important;
+            text-align: left;
+        }
+
+        .ingredient-col strong {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .ingredient-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .toxic-col {
+            background: rgba(220, 53, 69, 0.05);
+        }
+
+        .toxic-col .x-icon {
+            width: 28px;
+            height: 28px;
+            fill: #dc3545;
+        }
+
+        .toxic-col span {
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .safe-col {
+            background: rgba(143, 175, 147, 0.08);
+        }
+
+        .safe-col .check-icon {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary-green);
+        }
+
+        .safe-col span {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .comparison-footer {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--cream) 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .comparison-footer p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .comparison-footer strong {
+            color: var(--primary-green);
         }
 
         /* Scent Carousel */
@@ -1101,7 +1216,7 @@
             }
 
             .science-grid-container {
-                padding: 0 50px;
+                padding: 0 55px;
                 position: relative;
             }
 
@@ -1109,8 +1224,8 @@
                 display: flex;
                 overflow-x: auto;
                 scroll-behavior: smooth;
-                gap: 20px;
-                padding: 20px 0;
+                gap: 15px;
+                padding: 20px 5px;
                 scrollbar-width: none;
                 -ms-overflow-style: none;
                 scroll-snap-type: x mandatory;
@@ -1121,22 +1236,24 @@
             }
 
             .science-card {
-                flex: 0 0 85%;
+                flex: 0 0 calc(100% - 10px);
+                max-width: calc(100% - 10px);
                 scroll-snap-align: center;
+                scroll-snap-stop: always;
             }
 
             .science-nav {
                 display: flex;
-                width: 40px;
-                height: 40px;
+                width: 45px;
+                height: 45px;
             }
 
             .science-prev {
-                left: 5px;
+                left: 2px;
             }
 
             .science-next {
-                right: 5px;
+                right: 2px;
             }
 
             .method-intro {
@@ -1172,6 +1289,65 @@
                 font-size: 0.8rem;
             }
 
+            .comparison-section {
+                padding: 25px 20px;
+                margin: 40px auto 0;
+            }
+
+            .comparison-section h3 {
+                font-size: 1.6rem;
+            }
+
+            .comparison-intro {
+                font-size: 0.9rem;
+                margin-bottom: 25px;
+            }
+
+            .comparison-header {
+                grid-template-columns: 1.5fr 1fr 1fr;
+                font-size: 0.7rem;
+            }
+
+            .comparison-header .comparison-col {
+                padding: 12px 10px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+
+            .comparison-col {
+                padding: 15px 10px;
+            }
+
+            .ingredient-col strong {
+                font-size: 0.85rem;
+            }
+
+            .ingredient-note {
+                font-size: 0.7rem;
+            }
+
+            .toxic-col .x-icon,
+            .safe-col .check-icon {
+                width: 22px;
+                height: 22px;
+            }
+
+            .toxic-col span,
+            .safe-col span {
+                font-size: 0.75rem;
+            }
+
+            .comparison-footer {
+                padding: 20px 15px;
+                margin-top: 25px;
+            }
+
+            .comparison-footer p {
+                font-size: 0.85rem;
+            }
+
             .carousel-header {
                 margin-bottom: 30px;
             }
@@ -1185,25 +1361,31 @@
             }
 
             .scent-carousel-container {
-                padding: 0 50px;
+                padding: 0 55px;
+            }
+
+            .scent-carousel {
+                scroll-padding: 0 5px;
             }
 
             .carousel-nav {
                 display: flex;
-                width: 40px;
-                height: 40px;
+                width: 45px;
+                height: 45px;
             }
 
             .carousel-prev {
-                left: 5px;
+                left: 2px;
             }
 
             .carousel-next {
-                right: 5px;
+                right: 2px;
             }
 
             .scent-card {
-                flex: 0 0 80%;
+                flex: 0 0 calc(100% - 10px);
+                max-width: calc(100% - 10px);
+                scroll-snap-stop: always;
             }
 
             .why-method {
@@ -1243,6 +1425,63 @@
             .trust-badges {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .comparison-section {
+                padding: 20px 15px;
+            }
+
+            .comparison-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .comparison-intro {
+                font-size: 0.85rem;
+            }
+
+            .comparison-header {
+                grid-template-columns: 1.2fr 0.9fr 0.9fr;
+                font-size: 0.65rem;
+            }
+
+            .comparison-header .comparison-col {
+                padding: 10px 8px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1.2fr 0.9fr 0.9fr;
+            }
+
+            .comparison-col {
+                padding: 12px 8px;
+                gap: 5px;
+            }
+
+            .ingredient-col strong {
+                font-size: 0.8rem;
+            }
+
+            .ingredient-note {
+                font-size: 0.65rem;
+            }
+
+            .toxic-col .x-icon,
+            .safe-col .check-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .toxic-col span,
+            .safe-col span {
+                font-size: 0.7rem;
+            }
+
+            .comparison-footer {
+                padding: 18px 12px;
+            }
+
+            .comparison-footer p {
+                font-size: 0.8rem;
             }
 
             .stats-container {
@@ -1503,28 +1742,6 @@
         </div>
     </section>
 
-    <!-- Stats Banner -->
-    <div class="stats-banner">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>530</h3>
-                <p>VOCs Found in Common Cleaners</p>
-            </div>
-            <div class="stat-item">
-                <h3>193</h3>
-                <p>Classified as Hazardous</p>
-            </div>
-            <div class="stat-item">
-                <h3>8x</h3>
-                <p>Fewer VOCs in Green Products</p>
-            </div>
-            <div class="stat-item">
-                <h3>50%</h3>
-                <p>Outdoor VOCs from Consumer Products</p>
-            </div>
-        </div>
-    </div>
-
     <!-- Method Section -->
     <section class="method-section" id="method">
         <div class="method-intro">
@@ -1557,6 +1774,144 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     100% Recycled Bottles
                 </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-section">
+            <h3>Common Cleaners vs. Method</h3>
+            <p class="comparison-intro">See the difference for yourself—here's what you won't find in Method products:</p>
+
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-col ingredient-col">Ingredient</div>
+                    <div class="comparison-col">Common Cleaners</div>
+                    <div class="comparison-col method-col">Method</div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Chlorine Bleach</strong>
+                        <span class="ingredient-note">Respiratory irritant</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Ammonia</strong>
+                        <span class="ingredient-note">Toxic fumes</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Parabens</strong>
+                        <span class="ingredient-note">Endocrine disruptors</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Phthalates</strong>
+                        <span class="ingredient-note">Hormone disruptors</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Triclosan</strong>
+                        <span class="ingredient-note">Antibiotic resistance</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Synthetic Fragrances</strong>
+                        <span class="ingredient-note">Hidden allergens</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Plant-Based</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>Phosphates</strong>
+                        <span class="ingredient-note">Water pollutants</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-col ingredient-col">
+                        <strong>2-Butoxyethanol</strong>
+                        <span class="ingredient-note">Liver & kidney damage</span>
+                    </div>
+                    <div class="comparison-col toxic-col">
+                        <svg viewBox="0 0 24 24" class="x-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                        <span>Contains</span>
+                    </div>
+                    <div class="comparison-col safe-col">
+                        <svg viewBox="0 0 24 24" class="check-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        <span>Free</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-footer">
+                <p><strong>The Method Advantage:</strong> Plant-based cleaning power without the health risks. All ingredients are biodegradable, cruelty-free, and packaged in 100% recycled plastic bottles.</p>
             </div>
         </div>
 
