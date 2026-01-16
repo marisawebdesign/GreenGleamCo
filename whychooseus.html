@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us | The Green Gleam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5a3d;
+            --secondary-green: #4a7c59;
+            --accent-gold: #c9a962;
+            --cream: #faf8f5;
+            --cream-dark: #f5f2ed;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow-soft: 0 4px 20px rgba(45, 90, 61, 0.08);
+            --shadow-medium: 0 8px 30px rgba(45, 90, 61, 0.12);
+            --shadow-strong: 0 12px 40px rgba(45, 90, 61, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 12px 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner-track {
+            display: flex;
+            animation: scroll-banner 40s linear infinite;
+            width: max-content;
+        }
+
+        .banner-track span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-track span::before {
+            content: '✦';
+            color: var(--accent-gold);
+        }
+
+        @keyframes scroll-banner {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-cta {
+            background: var(--primary-green);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--secondary-green);
+            color: var(--white) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            padding: 100px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d5a3d' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero h1 span {
+            color: var(--primary-green);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 650px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .trust-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-green);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Science Section */
+        .science-section {
+            background: var(--white);
+        }
+
+        .science-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .science-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 40px 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .science-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .science-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+        }
+
+        .science-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .science-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary-green);
+        }
+
+        .science-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .science-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .science-citation {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(45, 90, 61, 0.1);
+        }
+
+        .citation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .citation-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .citation-link svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* Key Stats */
+        .stats-banner {
+            background: var(--primary-green);
+            padding: 60px 40px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Method Section */
+        .method-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+
+        .method-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .method-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 30px;
+        }
+
+        .method-logo-badge img {
+            height: 35px;
+            width: auto;
+        }
+
+        .method-logo-badge span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.05em;
+        }
+
+        .method-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .method-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .method-feature svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-green);
+        }
+
+        /* Scent Carousel */
+        .scent-carousel-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 60px;
+        }
+
+        .carousel-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .carousel-header h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .carousel-header p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .scent-carousel {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0 40px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+
+        .scent-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scent-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            scroll-snap-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scent-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .scent-color-orb {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+        }
+
+        .scent-card:hover .scent-color-orb {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .scent-color-orb::after {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+        }
+
+        .scent-card h4 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .scent-card .scent-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .scent-card .scent-notes {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .scent-card .scent-notes strong {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Specific scent colors */
+        .scent-lavender { background: linear-gradient(135deg, #9b7bb8 0%, #7c5c99 100%); }
+        .scent-grapefruit { background: linear-gradient(135deg, #f5a0a0 0%, #e87d7d 100%); }
+        .scent-lime { background: linear-gradient(135deg, #a8d86e 0%, #7cb342 100%); }
+        .scent-eucalyptus { background: linear-gradient(135deg, #7ecec0 0%, #4db6ac 100%); }
+        .scent-clementine { background: linear-gradient(135deg, #ffb347 0%, #f09819 100%); }
+        .scent-honeycrisp { background: linear-gradient(135deg, #c5e063 0%, #8bc34a 100%); }
+        .scent-almond { background: linear-gradient(135deg, #d4a574 0%, #b8956e 100%); }
+        .scent-spearmint { background: linear-gradient(135deg, #81c784 0%, #4caf50 100%); }
+        .scent-sweetwater { background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%); }
+        .scent-waterfall { background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%); }
+        .scent-ginger-mango { background: linear-gradient(135deg, #ffcc02 0%, #f9a825 100%); }
+        .scent-coconut { background: linear-gradient(135deg, #f5f5dc 0%, #ddd5c0 100%); }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            box-shadow: var(--shadow-medium);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary-green);
+        }
+
+        .carousel-nav:hover svg {
+            fill: var(--white);
+        }
+
+        .carousel-nav svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-dark);
+            transition: fill 0.3s ease;
+        }
+
+        .carousel-prev { left: 0; }
+        .carousel-next { right: 0; }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(45, 90, 61, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary-green);
+            transform: scale(1.2);
+        }
+
+        /* Why Method Card */
+        .why-method {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .why-method-content h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .why-method-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .why-method-list {
+            list-style: none;
+        }
+
+        .why-method-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .why-method-list li svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--primary-green);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .why-method-image {
+            position: relative;
+        }
+
+        .why-method-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-green);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-primary {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            padding: 60px 40px 30px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand img {
+            height: 70px;
+            width: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            header {
+                padding: 15px 25px;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                gap: 0;
+                box-shadow: var(--shadow-medium);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 0;
+                border-bottom: 1px solid var(--cream-dark);
+                width: 100%;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .nav-cta {
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            section {
+                padding: 70px 25px;
+            }
+
+            .hero {
+                padding: 70px 25px 60px;
+            }
+
+            .trust-badges {
+                gap: 25px;
+            }
+
+            .science-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scent-carousel-container {
+                padding: 0 15px;
+            }
+
+            .carousel-nav {
+                display: none;
+            }
+
+            .scent-card {
+                flex: 0 0 260px;
+            }
+
+            .why-method {
+                grid-template-columns: 1fr;
+                padding: 35px 25px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo img {
+                height: 45px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .scent-card {
+                flex: 0 0 240px;
+                padding: 30px 20px;
+            }
+
+            .scent-color-orb {
+                width: 80px;
+                height: 80px;
+            }
+
+            .method-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-track">
+            <span>NextDoor Neighborhood Top 10 Favorites 5 Years in a Row</span>
+            <span>100% Non-Toxic • Zero Carcinogens • Family & Pet Safe</span>
+            <span>Top Rated Eco-Friendly Local Business of 2025</span>
+            <span>Your Satisfaction or Your Money Back Guarantee</span>
+            <span>NextDoor Neighborhood Top 10 Favorites 5 Years in a Row</span>
+            <span>100% Non-Toxic • Zero Carcinogens • Family & Pet Safe</span>
+            <span>Top Rated Eco-Friendly Local Business of 2025</span>
+            <span>Your Satisfaction or Your Money Back Guarantee</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/GREEN-GLEAM-LOGO1.jpg" alt="The Green Gleam Logo">
+            </div>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="whychooseus.html">Why Choose Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="booking.html" class="nav-cta">Join Our Client Waitlist</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Science-Backed Cleaning</span>
+            <h1>Your Health is <span>Our Priority</span></h1>
+            <p>Decades of research have revealed the hidden dangers lurking in conventional cleaning products. We made the switch to safer alternatives because your family deserves better.</p>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    100% Non-Toxic
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Zero Carcinogens
+                </div>
+                <div class="trust-badge">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 9.5c0-.28.22-.5.5-.5h1c.28 0 .5.22.5.5v5c0 .28-.22.5-.5.5H5c-.28 0-.5-.22-.5-.5v-5zm3.5 0c0-.28.22-.5.5-.5h1c.28 0 .5.22.5.5v5c0 .28-.22.5-.5.5h-1c-.28 0-.5-.22-.5-.5v-5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    Pet & Family Safe
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science-section" id="science">
+        <div class="section-header">
+            <h2>What the Research Shows</h2>
+            <p>Peer-reviewed studies from leading scientific journals reveal concerning findings about conventional cleaning products and their impact on human health.</p>
+        </div>
+
+        <div class="science-grid">
+            <!-- Card 1: VOCs -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z"/></svg>
+                </div>
+                <h3>530 Volatile Compounds Detected</h3>
+                <p>A 2023 study published in Chemosphere tested 30 common cleaning products and detected 530 unique volatile organic compounds (VOCs). Of these, 193 were classified as hazardous with potential to cause respiratory damage, elevated cancer risk, and developmental concerns.</p>
+                <div class="science-citation">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0045653523018374" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        Chemosphere, 2023
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Asthma Risk -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/></svg>
+                </div>
+                <h3>Increased Asthma Risk</h3>
+                <p>A comprehensive 2024 review in Environment International found that both occupational and residential exposure to cleaning products increases the risk of asthma and asthma-like symptoms. Cleaning sprays, chlorine bleach, and disinfectants showed the strongest associations with respiratory effects.</p>
+                <div class="science-citation">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/38917624/" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        Environment International, 2024
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Hazardous Substances -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                </div>
+                <h3>Hidden Hazardous Ingredients</h3>
+                <p>Research published in the International Journal of Occupational and Environmental Health identified fragrances, glycol ethers, and ethanolamines as frequently used substances in cleaning products. These compounds are linked to skin irritation, respiratory sensitization, and potential endocrine disruption.</p>
+                <div class="science-citation">
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4096065/" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        Int J Occup Environ Health, 2014
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Green Products Better -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+                </div>
+                <h3>Green Products Emit Fewer Toxins</h3>
+                <p>The same Chemosphere study found that fragrance-free green products emitted nearly eight times fewer VOCs than conventional cleaners. Green products averaged just 4 hazardous chemicals compared to 22 in conventional products, suggesting safer alternatives do exist.</p>
+                <div class="science-citation">
+                    <a href="https://www.sciencedirect.com/science/article/pii/S0045653523018374" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        Chemosphere, 2023
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Indoor Air Quality -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm5 15h-2v-6H9v6H7v-7.81l5-4.5 5 4.5V18z"/></svg>
+                </div>
+                <h3>Poor Indoor Air Quality</h3>
+                <p>Research from Lawrence Berkeley National Laboratory shows that VOCs from cleaning products can remain airborne for extended periods after use, exposing household members to potential toxins long after cleaning is complete. This is particularly concerning for children, elderly, and those with respiratory conditions.</p>
+                <div class="science-citation">
+                    <a href="https://iaqscience.lbl.gov/vocs-cleaning-products" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        LBL Indoor Air Quality, 2022
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Outdoor Impact -->
+            <div class="science-card">
+                <div class="science-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 4.12 13.38 3 12 3S9.5 4.12 9.5 5.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
+                </div>
+                <h3>Environmental Impact</h3>
+                <p>A 2018 study estimated that half of the VOCs contributing to outdoor air pollution come from consumer products, including cleaning supplies. These emissions contribute to smog formation and broader environmental degradation. Choosing plant-based alternatives reduces both indoor and outdoor pollution.</p>
+                <div class="science-citation">
+                    <a href="https://www.ewg.org/news-insights/news-release/2023/09/cleaning-products-emit-hundreds-hazardous-chemicals-new-study" class="citation-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                        EWG Research Summary, 2023
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <div class="stats-banner">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>530</h3>
+                <p>VOCs Found in Common Cleaners</p>
+            </div>
+            <div class="stat-item">
+                <h3>193</h3>
+                <p>Classified as Hazardous</p>
+            </div>
+            <div class="stat-item">
+                <h3>8x</h3>
+                <p>Fewer VOCs in Green Products</p>
+            </div>
+            <div class="stat-item">
+                <h3>50%</h3>
+                <p>Outdoor VOCs from Consumer Products</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method Section -->
+    <section class="method-section" id="method">
+        <div class="method-intro">
+            <div class="method-logo-badge">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="#2d5a3d">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>Our Product Partner</span>
+            </div>
+            <h2>Why We Choose Method</h2>
+            <p>After extensive research, we selected Method as our primary cleaning partner. Their plant-based formulas deliver powerful cleaning without the harmful chemicals found in conventional products. Plus, every bottle is made from 100% recycled plastic.</p>
+            <div class="method-features">
+                <div class="method-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Cruelty-Free
+                </div>
+                <div class="method-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    No Parabens
+                </div>
+                <div class="method-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    No Phthalates
+                </div>
+                <div class="method-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Biodegradable
+                </div>
+                <div class="method-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    100% Recycled Bottles
+                </div>
+            </div>
+        </div>
+
+        <!-- Scent Carousel -->
+        <div class="scent-carousel-container">
+            <div class="carousel-header">
+                <h3>Explore Method Scents</h3>
+                <p>Discover the nature-inspired fragrances that make cleaning a sensory delight</p>
+            </div>
+
+            <button class="carousel-nav carousel-prev" onclick="scrollCarousel(-1)" aria-label="Previous scents">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+
+            <div class="scent-carousel" id="scentCarousel">
+                <!-- French Lavender -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-lavender"></div>
+                    <span class="scent-category">All-Purpose</span>
+                    <h4>French Lavender</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Lavender, bergamot, purple sage, chamomile</p>
+                </div>
+
+                <!-- Pink Grapefruit -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-grapefruit"></div>
+                    <span class="scent-category">All-Purpose</span>
+                    <h4>Pink Grapefruit</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Bright citrus, tangy grapefruit, sunny warmth</p>
+                </div>
+
+                <!-- Lime + Sea Salt -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-lime"></div>
+                    <span class="scent-category">All-Purpose</span>
+                    <h4>Lime + Sea Salt</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Tart lime, ocean breeze, mineral sea salt</p>
+                </div>
+
+                <!-- Eucalyptus Mint -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-eucalyptus"></div>
+                    <span class="scent-category">Bathroom</span>
+                    <h4>Eucalyptus Mint</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Cool eucalyptus, fresh spearmint, herbal clarity</p>
+                </div>
+
+                <!-- Clementine -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-clementine"></div>
+                    <span class="scent-category">All-Purpose</span>
+                    <h4>Clementine</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Sweet citrus, mandarin zest, bright sunshine</p>
+                </div>
+
+                <!-- Honeycrisp Apple -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-honeycrisp"></div>
+                    <span class="scent-category">All-Purpose</span>
+                    <h4>Honeycrisp Apple</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Crisp apple, orchard fresh, hint of honey</p>
+                </div>
+
+                <!-- Almond -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-almond"></div>
+                    <span class="scent-category">Wood Floor</span>
+                    <h4>Almond</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Warm almond, subtle sweetness, cozy comfort</p>
+                </div>
+
+                <!-- Spearmint -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-spearmint"></div>
+                    <span class="scent-category">Toilet</span>
+                    <h4>Spearmint</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Cool spearmint, refreshing herbs, invigorating clean</p>
+                </div>
+
+                <!-- Sweet Water -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-sweetwater"></div>
+                    <span class="scent-category">Hand Soap</span>
+                    <h4>Sweet Water</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Grapefruit, lemon leaves, star jasmine, lily of the valley</p>
+                </div>
+
+                <!-- Waterfall -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-waterfall"></div>
+                    <span class="scent-category">Hand Soap</span>
+                    <h4>Waterfall</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Fresh water, crisp air, natural mineral essence</p>
+                </div>
+
+                <!-- Ginger + Mango -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-ginger-mango"></div>
+                    <span class="scent-category">Laundry</span>
+                    <h4>Ginger + Mango</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Fiery ginger, tropical mango, exotic warmth</p>
+                </div>
+
+                <!-- Coconut + Cactus -->
+                <div class="scent-card">
+                    <div class="scent-color-orb scent-coconut"></div>
+                    <span class="scent-category">Laundry</span>
+                    <h4>Coconut + Cactus</h4>
+                    <p class="scent-notes"><strong>Notes:</strong> Creamy coconut, desert cactus, subtle sweetness</p>
+                </div>
+            </div>
+
+            <button class="carousel-nav carousel-next" onclick="scrollCarousel(1)" aria-label="Next scents">
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+            </button>
+
+            <div class="carousel-dots" id="carouselDots">
+                <button class="carousel-dot active" onclick="scrollToCard(0)"></button>
+                <button class="carousel-dot" onclick="scrollToCard(3)"></button>
+                <button class="carousel-dot" onclick="scrollToCard(6)"></button>
+                <button class="carousel-dot" onclick="scrollToCard(9)"></button>
+            </div>
+        </div>
+
+        <!-- Why Method Card -->
+        <div class="why-method">
+            <div class="why-method-content">
+                <h3>The Method Difference</h3>
+                <p>Method products are formulated to be tough on dirt but gentle on your home and the planet. Here's what sets them apart from conventional cleaners:</p>
+                <ul class="why-method-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Plant-based cleaning agents derived from corn and coconut
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Never tested on animals and Leaping Bunny certified
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Bottles made from 100% post-consumer recycled plastic
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Biodegradable formulas that break down safely
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Free from chlorine, ammonia, and triclosan
+                    </li>
+                </ul>
+            </div>
+            <div class="why-method-image">
+                <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80" alt="Eco-friendly cleaning products">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for a Healthier Clean?</h2>
+            <p>Experience the difference that non-toxic, eco-friendly cleaning can make for your home and family. Schedule your consultation today.</p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="cta-btn cta-btn-primary">Book a Consultation</a>
+                <a href="contact.html" class="cta-btn cta-btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/GREEN-GLEAM-LOGO1.jpg" alt="The Green Gleam">
+                <p>Elevate your space with eco-friendly luxury. We deliver pristine results using only the safest, plant-based cleaning solutions that protect your family and our planet.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#services">Services</a>
+                <a href="whychooseus.html">Why Choose Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Get Started</h4>
+                <a href="booking.html">Book Consultation</a>
+                <a href="tel:4015455148">401-545-5148</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © The Green Gleam 2025. All Rights Reserved. Eco-Friendly Luxury Cleaning</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Carousel Functionality
+        const carousel = document.getElementById('scentCarousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const cardWidth = 305; // card width + gap
+
+        function scrollCarousel(direction) {
+            const scrollAmount = cardWidth * 3 * direction;
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        function scrollToCard(index) {
+            carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+            updateDots(index);
+        }
+
+        function updateDots(activeIndex) {
+            dots.forEach((dot, i) => {
+                const dotIndex = i * 3;
+                dot.classList.toggle('active', Math.abs(activeIndex - dotIndex) < 3);
+            });
+        }
+
+        // Update dots on scroll
+        carousel.addEventListener('scroll', () => {
+            const scrollPosition = carousel.scrollLeft;
+            const activeIndex = Math.round(scrollPosition / cardWidth);
+            dots.forEach((dot, i) => {
+                const dotIndex = i * 3;
+                dot.classList.toggle('active', Math.abs(activeIndex - dotIndex) < 2);
+            });
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                scrollCarousel(diff > 0 ? 1 : -1);
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.science-card, .scent-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
