@@ -1791,6 +1791,11 @@
                     <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/><path d="M10 12.5l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
                     100% Satisfaction Guaranteed
                 </span>
+                <span class="mobile-keypoint-divider"></span>
+                <span class="mobile-keypoint">
+                    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                    Licensed & Insured
+                </span>
             </div>
         </div>
     </nav>
@@ -2396,15 +2401,47 @@
         // Carousel Functionality
         const carousel = document.getElementById('scentCarousel');
         const dots = document.querySelectorAll('.carousel-dot');
-        const cardWidth = 305; // card width + gap
+        const cards = carousel.querySelectorAll('.scent-card');
 
         function scrollCarousel(direction) {
-            const scrollAmount = cardWidth * direction;
-            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            const currentScroll = carousel.scrollLeft;
+            const carouselWidth = carousel.offsetWidth;
+
+            // Find the currently centered card
+            let currentIndex = 0;
+            let minDistance = Infinity;
+
+            cards.forEach((card, index) => {
+                const cardRect = card.getBoundingClientRect();
+                const carouselRect = carousel.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const carouselCenter = carouselRect.left + carouselRect.width / 2;
+                const distance = Math.abs(cardCenter - carouselCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    currentIndex = index;
+                }
+            });
+
+            // Scroll to next/previous card
+            const targetIndex = Math.max(0, Math.min(cards.length - 1, currentIndex + direction));
+            scrollToCard(targetIndex);
         }
 
         function scrollToCard(index) {
-            carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+            const card = cards[index];
+            if (!card) return;
+
+            const carouselRect = carousel.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+
+            // Calculate scroll position to center the card
+            const carouselCenter = carouselRect.width / 2;
+            const cardCenter = cardRect.left - carouselRect.left + carousel.scrollLeft + cardRect.width / 2;
+            const scrollPosition = cardCenter - carouselCenter;
+
+            carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
             updateDots(index);
         }
 
@@ -2416,11 +2453,24 @@
 
         // Update dots on scroll
         carousel.addEventListener('scroll', () => {
-            const scrollPosition = carousel.scrollLeft;
-            const activeIndex = Math.round(scrollPosition / cardWidth);
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === activeIndex);
+            // Find the currently centered card
+            let currentIndex = 0;
+            let minDistance = Infinity;
+
+            cards.forEach((card, index) => {
+                const cardRect = card.getBoundingClientRect();
+                const carouselRect = carousel.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const carouselCenter = carouselRect.left + carouselRect.width / 2;
+                const distance = Math.abs(cardCenter - carouselCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    currentIndex = index;
+                }
             });
+
+            updateDots(currentIndex);
         });
 
         // Touch swipe support
