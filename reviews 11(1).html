@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews | The Green Gleam - Rhode Island</title>
+    <meta name="description" content="See why Rhode Island families trust The Green Gleam. 5-star Google reviews from verified clients in Woonsocket, Cranston, and Providence. Real testimonials, real results.">
+    <link rel="canonical" href="https://greengleamco.com/reviews.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greengleamco.com/reviews.html">
+    <meta property="og:title" content="Client Reviews | The Green Gleam - Rhode Island">
+    <meta property="og:description" content="See why Rhode Island families trust The Green Gleam. 5-star Google reviews from verified clients.">
+    <meta property="og:image" content="https://greengleamco.com/images/GREEN-GLEAM-LOGO1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://greengleamco.com/reviews.html">
+    <meta property="twitter:title" content="Client Reviews | The Green Gleam - Rhode Island">
+    <meta property="twitter:description" content="See why Rhode Island families trust The Green Gleam. 5-star Google reviews from verified clients.">
+    <meta property="twitter:image" content="https://greengleamco.com/images/GREEN-GLEAM-LOGO1.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #8FAF93;
+            --accent-green: #D4ECDD;
+            --light-green: #D4ECDD;
+            --outline-accent: #B9D9BF;
+            --cream: #FAFAF7;
+            --white: #FFFFFF;
+            --dark: #1A1A1A;
+            --gray: #666666;
+            --light-gray: #F5F5F5;
+            --border-blue: #02806A;
+            --star-gold: #FBBC04;
+            --google-blue: #4285F4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; color: var(--dark); background: var(--cream); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 500; }
+
+        /* ========================================
+           NAVIGATION - Matching Homepage Exactly
+           ======================================== */
+        .navbar {
+            background: var(--primary-green);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.12);
+            border-bottom: 1.5px solid var(--border-blue);
+        }
+        
+        .navbar-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2%;
+            width: 100%;
+        }
+        
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            flex-shrink: 0; 
+        }
+        .logo img { height: 100px; }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            padding: 10px 0;
+        }
+        
+        .header-top-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        .header-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.9);
+            font-style: italic;
+            letter-spacing: 0.5px;
+            text-align: right;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .awards-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 6px 15px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .award-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255,255,255,0.85);
+        }
+        .award-text {
+            font-size: 9px;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .award-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .nav-menu { 
+            display: flex; 
+            align-items: center; 
+            gap: 4px; 
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-menu li { display: flex; }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .nav-menu a:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .nav-menu a.active {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.25);
+        }
+        
+        .nav-btn-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .phone-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--dark);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .phone-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+        .phone-btn:hover {
+            background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .nav-btn {
+            background: var(--dark) !important;
+            color: var(--white) !important;
+            padding: 10px 16px !important;
+            border: 2px solid rgba(255,255,255,0.3) !important;
+            border-radius: 6px !important;
+            font-weight: 600;
+            font-size: 11px !important;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+        .nav-btn:hover {
+            background: #2a2a2a !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Mobile Header Info Bar */
+        .mobile-header-info {
+            display: none;
+            width: 100%;
+            background: rgba(255,255,255,0.08);
+            padding: 10px 15px;
+        }
+        .mobile-keypoints {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mobile-keypoint {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: rgba(255,255,255,0.9);
+            font-size: 9px;
+        }
+        .mobile-keypoint svg {
+            width: 14px;
+            height: 14px;
+            fill: rgba(255,255,255,0.85);
+        }
+        .mobile-keypoint-divider {
+            width: 1px;
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .mobile-nav-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary-green);
+            z-index: 9999;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .mobile-nav-menu.active {
+            display: flex;
+        }
+        .mobile-nav-close {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .mobile-nav-menu ul {
+            list-style: none;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .mobile-nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px;
+            display: block;
+            text-align: center;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .mobile-nav-menu a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .mobile-nav-menu .mobile-cta-btn {
+            background: var(--dark);
+            margin-top: 20px;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .reviews-hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            padding: 60px 5%;
+            text-align: center;
+            border-bottom: 1.5px solid var(--border-blue);
+        }
+        .reviews-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        .reviews-hero p {
+            font-size: 1.1rem;
+            color: rgba(26,26,26,0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Google Rating Summary */
+        .google-rating-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .google-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .google-logo svg {
+            height: 24px;
+            width: auto;
+        }
+        .google-logo span {
+            font-weight: 600;
+            color: var(--gray);
+            font-size: 14px;
+        }
+        .rating-display {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .rating-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .rating-stars {
+            display: flex;
+            gap: 2px;
+        }
+        .rating-stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--star-gold);
+        }
+        .rating-count {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ========================================
+           REVIEWS DISPLAY SECTION
+           ======================================== */
+        .reviews-display {
+            background: var(--cream);
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Reviews Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        /* Review Card - Google Style */
+        .review-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(143,175,147,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(143,175,147,0.18);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--google-blue), #34A853);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        .reviewer-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .reviewer-details h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .review-date {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--gray);
+            background: #f8f9fa;
+        }
+        .google-badge svg {
+            width: 12px;
+            height: 12px;
+        }
+        
+        .review-rating {
+            display: flex;
+            gap: 2px;
+        }
+        .review-rating svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--star-gold);
+        }
+        .review-rating svg.empty {
+            fill: #ddd;
+        }
+        
+        .review-text {
+            color: var(--dark);
+            line-height: 1.7;
+            font-size: 0.9rem;
+            flex-grow: 1;
+            margin-top: 10px;
+        }
+        
+        /* Review Photos */
+        .review-photos {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .review-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .review-photo:hover {
+            transform: scale(1.05);
+        }
+        .review-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Owner Response */
+        .owner-response {
+            background: var(--light-green);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .owner-response-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .owner-response-header strong {
+            font-size: 0.85rem;
+            color: var(--dark);
+        }
+        .owner-response-header span {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+        .owner-response p {
+            font-size: 0.85rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           LEAVE A REVIEW CTA SECTION
+           ======================================== */
+        .leave-review-section {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-green) 100%);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1.5px solid var(--border-blue);
+        }
+        .leave-review-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .leave-review-container h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        .leave-review-container p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .google-review-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            color: var(--dark);
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .google-review-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            border-color: var(--google-blue);
+        }
+        .google-review-btn svg {
+            height: 24px;
+            width: auto;
+        }
+        
+        .review-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .review-benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        .review-benefit svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-green);
+        }
+
+        /* ========================================
+           OTHER PLATFORMS SECTION
+           ======================================== */
+        .other-platforms {
+            background: var(--cream);
+            padding: 50px 5%;
+        }
+        .other-platforms-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .other-platforms h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+        .platforms-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .platform-card {
+            background: var(--white);
+            padding: 25px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+        }
+        .platform-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .platform-card img {
+            height: 30px;
+            width: auto;
+        }
+        .platform-card .platform-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        .platform-card .platform-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+        .platform-card .platform-rating svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--star-gold);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--dark);
+            padding: 40px 5%;
+            color: var(--white);
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .footer-brand img {
+            height: 60px;
+            border-radius: 8px;
+        }
+        .footer-brand-text h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .footer-brand-text p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+        .footer-contact p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .footer-contact a {
+            color: var(--light-green);
+            text-decoration: none;
+        }
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1024px) {
+            .awards-banner {
+                display: none;
+            }
+            .header-tagline {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-main {
+                padding: 10px 15px;
+            }
+            .logo img { 
+                height: 70px; 
+            }
+            .header-right {
+                display: none;
+            }
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .mobile-header-info {
+                display: block;
+            }
+            
+            .reviews-hero {
+                padding: 40px 5%;
+            }
+            .reviews-hero h1 {
+                font-size: 1.8rem;
+            }
+            .reviews-hero p {
+                font-size: 1rem;
+            }
+            .google-rating-summary {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 25px;
+            }
+            
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            .leave-review-container h2 {
+                font-size: 1.8rem;
+            }
+            
+            .review-benefits {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .platforms-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .platform-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-brand {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .review-card {
+                padding: 20px;
+            }
+            .reviewer-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            .review-photo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Photo Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+    
+    <!-- Schema.org Review Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "The Green Gleam",
+        "image": "https://greengleamco.com/images/GREEN-GLEAM-LOGO1.jpg",
+        "url": "https://greengleamco.com",
+        "telephone": "+1-401-545-5148",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Woonsocket",
+            "addressRegion": "RI",
+            "postalCode": "02895",
+            "addressCountry": "US"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "55",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "datePublished": "2025-01-10",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "reviewBody": "The Green Gleam transformed my home! I have severe allergies and was hesitant about cleaning products, but their eco-friendly approach made all the difference."
+            },
+            {
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": "Jennifer T."
+                },
+                "datePublished": "2025-01-08",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                },
+                "reviewBody": "As a pet owner, finding a cleaning service that's truly non-toxic was a priority. The Green Gleam exceeded my expectations."
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation - Matching Homepage -->
+    <nav class="navbar">
+        <div class="navbar-main">
+            <a href="index.html" class="logo">
+                <img src="images/GREEN-GLEAM-LOGO1.jpg" alt="The Green Gleam eco-friendly cleaning service logo" width="100" height="100">
+            </a>
+            
+            <div class="header-right">
+                <div class="header-top-row">
+                    <div class="awards-banner">
+                        <div class="award-item">
+                            <div class="award-icon">
+                                <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3a2 2 0 01-2 2H7a2 2 0 01-2-2v-1h14v1z"/></svg>
+                            </div>
+                            <span class="award-text">NextDoor Favorite 5 Years</span>
+                        </div>
+                        <div class="award-divider"></div>
+                        <div class="award-item">
+                            <div class="award-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                            </div>
+                            <span class="award-text">100% Satisfaction Guarantee</span>
+                        </div>
+                        <div class="award-divider"></div>
+                        <div class="award-item">
+                            <div class="award-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z"/></svg>
+                            </div>
+                            <span class="award-text">100% Non-Toxic Products</span>
+                        </div>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="reviews.html" class="active">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li>
+                            <div class="nav-btn-container">
+                                <a href="tel:4015455148" class="phone-btn" title="Call Us" aria-label="Call The Green Gleam">
+                                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </a>
+                                <a href="booking.html" class="nav-btn">Join Our Waitlist</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <span class="header-tagline">Serving the best homes in Woonsocket & Rhode Island</span>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Open menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Header Info Bar -->
+        <div class="mobile-header-info">
+            <div class="mobile-keypoints">
+                <span class="mobile-keypoint">
+                    <svg viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3a2 2 0 01-2 2H7a2 2 0 01-2-2v-1h14v1z"/></svg>
+                    5-Star Rated
+                </span>
+                <span class="mobile-keypoint-divider"></span>
+                <span class="mobile-keypoint">
+                    <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z"/></svg>
+                    Eco-Friendly
+                </span>
+                <span class="mobile-keypoint-divider"></span>
+                <span class="mobile-keypoint">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    Licensed & Insured
+                </span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:4015455148">📞 (401) 545-5148</a></li>
+            <li><a href="booking.html" class="mobile-cta-btn">Join Our Client Waitlist</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="reviews-hero">
+        <h1>What Rhode Island Families Are Saying</h1>
+        <p>Real reviews from real clients who trust The Green Gleam with their homes</p>
+        
+        <!-- Google Rating Summary Badge -->
+        <div class="google-rating-summary">
+            <div class="google-logo">
+                <!-- Google "G" Logo -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span>Reviews</span>
+            </div>
+            <div class="rating-display">
+                <span class="rating-number">5.0</span>
+                <div class="rating-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="rating-count">Based on 55+ reviews</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Display Section -->
+    <section class="reviews-display">
+        <div class="section-header">
+            <h2>Recent Google Reviews</h2>
+            <p>See what our clients in Woonsocket, Cranston, and Providence have to say</p>
+        </div>
+
+        <div class="reviews-grid">
+            <!-- Review 1 - With Photo -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">SM</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Sarah M.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">January 2025</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">The Green Gleam transformed my home! I have severe allergies and was hesitant about cleaning products, but their eco-friendly approach made all the difference. The team is professional, thorough, and my house has never felt cleaner or safer. Plus, I love that they use Method products - everything smells amazing without any harsh chemicals!</p>
+                
+                <div class="review-photos">
+                    <div class="review-photo" onclick="openLightbox('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=200&q=80" alt="Clean bathroom after Green Gleam service" loading="lazy">
+                    </div>
+                    <div class="review-photo" onclick="openLightbox('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=80" alt="Sparkling kitchen counters" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="owner-response">
+                    <div class="owner-response-header">
+                        <strong>Response from The Green Gleam</strong>
+                        <span>• January 2025</span>
+                    </div>
+                    <p>Thank you so much, Sarah! We're thrilled that our eco-friendly products have made such a difference for your allergies. Your home is beautiful, and it's our pleasure to help keep it healthy and sparkling!</p>
+                </div>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JT</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Jennifer T.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">January 2025</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">As a pet owner, finding a cleaning service that's truly non-toxic was a priority. The Green Gleam exceeded my expectations. My dogs are sensitive to chemicals, and they don't react at all to the products used. The team is reliable, respectful of my home, and does an incredible job. Highly recommend to any pet parents in Rhode Island!</p>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">MC</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Michael C.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">December 2024</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Outstanding service from start to finish! The consultation was thorough, the pricing was transparent (no hidden fees!), and the cleaning was impeccable. I appreciate that they honor their estimates - my deep clean took longer than expected but they didn't charge me extra. That's integrity. Will definitely be using them regularly.</p>
+            </article>
+
+            <!-- Review 4 -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AR</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Amanda R.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">December 2024</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce and her team are amazing! We had them do a deep clean before hosting family for the holidays, and everyone commented on how fresh and clean our home looked. The fact that everything is eco-friendly gives me such peace of mind with young kids running around. Already booked for regular cleanings!</p>
+                
+                <div class="review-photos">
+                    <div class="review-photo" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=80" alt="Beautifully clean living room" loading="lazy">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Review 5 -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">DP</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">David P.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">November 2024</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">I manage several rental properties in Cranston and The Green Gleam has been a lifesaver for turnovers. They're quick, thorough, and the eco-friendly approach has been a selling point for my listings. Professional communication and always on time. Highly recommend for any property managers in RI!</p>
+            </article>
+
+            <!-- Review 6 -->
+            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">LW</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Lisa W.</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">November 2024</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Finally, a cleaning service that cares about what goes into our home as much as we do! We specifically sought out an eco-friendly cleaner after our pediatrician recommended reducing chemical exposure. The Green Gleam has been wonderful - thorough, professional, and genuinely committed to non-toxic cleaning. Worth every penny!</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Leave a Review CTA Section -->
+    <section class="leave-review-section">
+        <div class="leave-review-container">
+            <h2>Loved Your Experience?</h2>
+            <p>Your feedback helps other Rhode Island families find eco-friendly cleaning they can trust. Share your experience on Google - it only takes a minute and means the world to our small business!</p>
+            
+            <!-- TODO: Replace # with actual Google review link once GBP is created -->
+            <a href="#" class="google-review-btn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Leave a Google Review
+            </a>
+            
+            <div class="review-benefits">
+                <div class="review-benefit">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Takes less than 2 minutes</span>
+                </div>
+                <div class="review-benefit">
+                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    <span>Helps other families find us</span>
+                </div>
+                <div class="review-benefit">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span>Supports our small business</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Platforms Section -->
+    <section class="other-platforms">
+        <div class="other-platforms-container">
+            <h3>Also Find Us On</h3>
+            <div class="platforms-grid">
+                <a href="https://nextdoor.com/pages/green-gleam-cranston-ri/" class="platform-card" target="_blank" rel="noopener noreferrer">
+                    <svg height="30" viewBox="0 0 124 24" fill="#8ED500" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.16 6.55c-2.46-4.03-7.36-5.65-11.58-3.82C6.35 4.55 4.2 9.26 5.67 13.74l.36.81c.18.36.55.54.91.54.18 0 .36-.04.54-.13.45-.22.64-.77.42-1.22l-.36-.77c-1.11-3.39.52-7.08 3.64-8.24 3.34-1.39 7.17.17 9.06 3.25.18.27.45.45.77.45.18 0 .36-.04.5-.13.45-.27.59-.82.32-1.27l-.67-.48z"/>
+                    </svg>
+                    <span class="platform-name">Nextdoor</span>
+                    <span class="platform-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        Neighborhood Favorite
+                    </span>
+                </a>
+                <a href="https://www.homeadvisor.com/rated.GreenGleamLLC.102932845.html" class="platform-card" target="_blank" rel="noopener noreferrer">
+                    <svg height="30" viewBox="0 0 100 24" fill="#F68B1E" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span class="platform-name">HomeAdvisor</span>
+                    <span class="platform-rating">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        5.0 Top Rated Pro
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/GREEN-GLEAM-LOGO1.jpg" alt="The Green Gleam Logo" width="60" height="60">
+                <div class="footer-brand-text">
+                    <h3>The Green Gleam</h3>
+                    <p>Eco-Friendly Luxury Cleaning</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Phone:</strong> <a href="tel:+14015455148">(401) 545-5148</a></p>
+                <p><strong>Email:</strong> <a href="mailto:joyce@greengleamco.com">joyce@greengleamco.com</a></p>
+                <p><strong>Service Areas:</strong> Woonsocket, Cranston, Providence, North Smithfield, Cumberland, Lincoln & surrounding RI communities</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © The Green Gleam 2025. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Review Photos -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Review photo enlarged">
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Photo Lightbox
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+
+        /* 
+         * GOOGLE REVIEWS INTEGRATION NOTES FOR DEVELOPER:
+         * 
+         * Option 1: Manual Updates (Current Setup)
+         * - Joyce manually copies reviews from Google Business Profile
+         * - Update the review cards in this HTML file periodically
+         * - Pros: No API costs, full control over display
+         * - Cons: Requires manual updates
+         * 
+         * Option 2: Google Places API (Requires Backend)
+         * - Use Google Places API to fetch reviews automatically
+         * - Requires: API key, backend server, billing account
+         * - Cost: ~$17 per 1000 requests
+         * - Implementation: 
+         *   1. Set up backend endpoint to fetch reviews
+         *   2. Call endpoint on page load
+         *   3. Dynamically populate review cards
+         * 
+         * Option 3: Third-Party Widget (Easiest)
+         * - Use services like EmbedReviews, Elfsight, or Grade.us
+         * - Cost: $10-50/month
+         * - Pros: Auto-sync, easy setup
+         * - Cons: Monthly cost, less design control
+         * 
+         * IMPORTANT: Once Joyce creates her Google Business Profile,
+         * update the "Leave a Google Review" button href with her
+         * actual Google review link. Format:
+         * https://search.google.com/local/writereview?placeid=PLACE_ID
+         */
+    </script>
+</body>
+</html>
