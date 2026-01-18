@@ -360,15 +360,49 @@
             opacity: 0.6;
         }
 
+        /* Large laptop screens (MacBook Pro 15") */
+        @media (max-width: 1440px) {
+            .page-header h1 {
+                font-size: 46px;
+                letter-spacing: 3px;
+            }
+            .page-header p {
+                font-size: 17px;
+            }
+        }
+
+        /* Medium laptop screens (MacBook Pro 13") */
+        @media (max-width: 1280px) {
+            .page-header h1 {
+                font-size: 42px;
+            }
+            .page-header p {
+                font-size: 16px;
+            }
+            .contact-section {
+                padding: 70px 4%;
+            }
+        }
+
+        /* Tablets */
+        @media (max-width: 1024px) {
+            .page-header h1 {
+                font-size: 38px;
+            }
+            .contact-grid {
+                gap: 40px;
+            }
+        }
+
         /* Mobile Styles */
         @media (max-width: 768px) {
             .nav-menu, .header-right { display: none; }
-            .navbar { 
+            .navbar {
                 padding: 0 15px;
                 justify-content: space-between;
             }
             .logo img { height: 80px; }
-            
+
             .mobile-menu-toggle {
                 display: flex;
                 flex-direction: column;
@@ -389,7 +423,7 @@
                 background: var(--white);
                 border-radius: 2px;
             }
-            
+
             .page-header {
                 padding: 60px 5%;
             }

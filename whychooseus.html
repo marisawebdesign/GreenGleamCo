@@ -1091,6 +1091,29 @@
             color: rgba(255,255,255,0.5);
         }
 
+        /* Large laptop screens (MacBook Pro 15") */
+        @media (max-width: 1440px) {
+            section {
+                padding: 80px 30px;
+            }
+            .section-header h2 {
+                font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            }
+        }
+
+        /* Medium laptop screens (MacBook Pro 13") */
+        @media (max-width: 1280px) {
+            section {
+                padding: 70px 25px;
+            }
+            .hero {
+                padding: 50px 30px 60px;
+            }
+            .section-header h2 {
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
+            }
+        }
+
         /* Mobile Styles */
         @media (max-width: 992px) {
             .navbar {
