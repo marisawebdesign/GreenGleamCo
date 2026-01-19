@@ -294,68 +294,10 @@
         /* Square Booking Embed Container */
         .square-booking-container {
             min-height: 500px;
-            background: var(--light-gray);
+            background: transparent;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 40px 20px;
+            padding: 0;
             text-align: center;
-        }
-        .square-booking-container .placeholder-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-        .square-booking-container .placeholder-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: var(--primary-green);
-        }
-        .square-booking-container h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-        .square-booking-container p {
-            font-size: 14px;
-            color: var(--gray);
-            max-width: 300px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .square-book-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--primary-green);
-            color: var(--white);
-            padding: 16px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .square-book-btn:hover {
-            background: var(--dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .square-book-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
         }
 
         /* Trust Indicators */
@@ -780,17 +722,9 @@
                 
                 <!-- Square Booking Integration -->
                 <div class="square-booking-container">
-                    <div class="placeholder-icon">
-                        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
-                    </div>
-                    <h4>Square Appointments</h4>
-                    <p>Click below to view available time slots and book your free consultation.</p>
-                    
-                    <!-- Replace this href with your actual Square booking link -->
-                    <a href="https://squareup.com/appointments/book/YOUR-BUSINESS-ID" target="_blank" class="square-book-btn">
-                        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
-                        Book Free Consultation
-                    </a>
+                    <!-- Start Square Appointments Embed Code -->
+                    <script src='https://square.site/appointments/buyer/widget/jh3k9fla4dcr8g/L7R9XRTRNS402.js'></script>
+                    <!-- End Square Appointments Embed Code -->
                 </div>
 
                 <div class="trust-indicators">
