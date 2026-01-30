@@ -167,10 +167,18 @@
         }
         .nav-dropdown { position: relative; }
         .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 12px;
+        }
         .nav-dropdown-menu {
             display: none;
             position: absolute;
-            top: 100%;
+            top: calc(100% + 8px);
             left: 0;
             background: var(--dark);
             border-radius: 8px;
@@ -179,7 +187,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.1);
             z-index: 1000;
-            margin-top: 4px;
         }
         .nav-dropdown:hover .nav-dropdown-menu { display: block; }
         .nav-dropdown-menu a {
