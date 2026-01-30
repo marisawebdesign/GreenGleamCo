@@ -107,32 +107,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 6px 15px;
+            gap: 15px;
+            padding: 8px 20px;
             background: rgba(255,255,255,0.08);
             border-radius: 8px;
-            flex-wrap: wrap;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .award-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
+            color: rgba(255,255,255,0.9);
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .award-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
         }
         .award-icon svg {
-            width: 16px;
-            height: 16px;
+            width: 100%;
+            height: 100%;
             fill: rgba(255,255,255,0.85);
         }
         .award-text {
-            font-size: 9px;
-            color: rgba(255,255,255,0.85);
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            line-height: 1.2;
+            max-width: 85px;
+            white-space: normal;
         }
         .award-divider {
             width: 1px;
-            height: 16px;
-            background: rgba(255,255,255,0.2);
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
         }
 
         .nav-menu { 
