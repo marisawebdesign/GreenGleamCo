@@ -521,6 +521,46 @@
             color: var(--gray);
         }
         
+        .new-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #34A853, #2d9248);
+            letter-spacing: 0.3px;
+        }
+        .new-badge svg {
+            width: 10px;
+            height: 10px;
+            fill: #fff;
+        }
+
+        .sort-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .sort-controls label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        .sort-controls select {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border: 1px solid var(--outline-accent);
+            border-radius: 8px;
+            background: var(--white);
+            color: var(--dark);
+            cursor: pointer;
+        }
+
         .google-badge {
             display: inline-flex;
             align-items: center;
@@ -1109,7 +1149,7 @@
                     <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
-                <span class="rating-count">Based on 55+ reviews</span>
+                <span class="rating-count">Based on 70+ reviews</span>
             </div>
         </div>
     </section>
@@ -1121,9 +1161,17 @@
             <p>See what our clients in Woonsocket, Cranston, and Providence have to say</p>
         </div>
 
-        <div class="reviews-grid">
+        <div class="sort-controls">
+            <label for="sort-reviews">Sort by:</label>
+            <select id="sort-reviews" onchange="sortReviews(this.value)">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+            </select>
+        </div>
+
+        <div class="reviews-grid" id="reviews-grid">
             <!-- Review 1 - With Photo -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2025-01" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">SM</div>
@@ -1168,7 +1216,7 @@
             </article>
 
             <!-- Review 2 -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2025-01" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">JT</div>
@@ -1196,7 +1244,7 @@
             </article>
 
             <!-- Review 3 -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2024-12" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">MC</div>
@@ -1224,7 +1272,7 @@
             </article>
 
             <!-- Review 4 -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2024-12" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">AR</div>
@@ -1257,7 +1305,7 @@
             </article>
 
             <!-- Review 5 -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2024-11" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">DP</div>
@@ -1284,7 +1332,7 @@
             </article>
 
             <!-- Review 6 -->
-            <article class="review-card" itemscope itemtype="https://schema.org/Review">
+            <article class="review-card" data-date="2024-11" itemscope itemtype="https://schema.org/Review">
                 <div class="review-header">
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">LW</div>
@@ -1309,6 +1357,491 @@
                 </div>
                 <p class="review-text" itemprop="reviewBody">Finally, a cleaning service that cares about what goes into our home as much as we do! We specifically sought out an eco-friendly cleaner after our pediatrician recommended reducing chemical exposure. The Green Gleam has been wonderful - thorough, professional, and genuinely committed to non-toxic cleaning. Worth every penny!</p>
             </article>
+
+            <!-- Review 7 - Renee Cornue (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RC</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Renee Cornue</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce is communicative and compassionate. Her team is speedy and thorough. Highly recommend!</p>
+            </article>
+
+            <!-- Review 8 - Navneet Singh (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">NS</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Navneet Singh</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Professional, efficient and high quality! Joyce and her team do great work and are just lovely people. They leave my place spotless every time. Joyce is a great communicator and easy to schedule with. I highly recommend!</p>
+            </article>
+
+            <!-- Review 9 - Andrea Adelmann (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AA</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Andrea Adelmann</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce and her team do a great job cleaning my house. They are efficient, thorough and trustworthy. Highly recommend.</p>
+            </article>
+
+            <!-- Review 10 - Zachary Gordon (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">ZG</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Zachary Gordon</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce and her team are awesome. They always do a great job and are very friendly. Would highly recommend.</p>
+            </article>
+
+            <!-- Review 11 - Josh Coletta (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JC</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Josh Coletta</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">I have been using Joyce and The Green Gleam for all of my house cleaning needs for the past five years. The Green Gleam has been in to do regular cleanings in both my condo, and now my house, keeping my living space clean and neat, and eliminating the need to worry about cleaning. Would highly recommend!</p>
+            </article>
+
+            <!-- Review 12 - John Burnap (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JB</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">John Burnap</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Great service- highly recommend. I have been using for a few months. they come on a regular basis to do all the heavy stuff-kitchen/ bathroom, dusting, mop floors etc. their crew shows up on time and leaves my home sparkling!</p>
+            </article>
+
+            <!-- Review 13 - Hilary Trimbach (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">HT</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Hilary Trimbach</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce and her team are amazing! They always do such a good job!</p>
+            </article>
+
+            <!-- Review 14 - Ronnie Armany (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">RA</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Ronnie Armany</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Great job and very thorough. I will use Joyce on all of our Airbnb and rental properties. Highly recommend her to friends and family</p>
+            </article>
+
+            <!-- Review 15 - Mark M (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">MM</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Mark M</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Incredible work, could not recommend more highly</p>
+            </article>
+
+            <!-- Review 16 - Karla Rosenstein (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">KR</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Karla Rosenstein</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">We love Joyce and her team! They are quick and efficient and flexible when needed. They have done deep cleans when we've moved houses and a nice regular clean.</p>
+            </article>
+
+            <!-- Review 17 - Antonelis Gaviria (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AG</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Antonelis Gaviria</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">I have been using Green Gleam for the last year, and Joyce is the most professional business owner I have ever hired. They do an amazing job, leaving my home clean and smelling great. I don't have any allergic reactions to their products either which is a huge bonus. I highly recommend giving them a try!</p>
+            </article>
+
+            <!-- Review 18 - Lee Teverow (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">LT</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Lee Teverow</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Friendly, reliable and thorough! AND they use natural products that don't smell like chemicals or perfume and don't pollute the environment.</p>
+            </article>
+
+            <!-- Review 19 - Jason Giedt (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">JG</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Jason Giedt</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce and her staff are very professional, accommodating when plans change, and they do a great job!</p>
+            </article>
+
+            <!-- Review 20 - Angela Yingling (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">AY</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Angela Yingling</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">I love Joyce and her team! They have been taking care of my place for years and I could not be happier. With two dogs that love to shed, I really needed a reliable service and Joyce and her crew are the best! They use clean products and my place always looks and smells amazing.</p>
+                <div class="owner-response">
+                    <div class="owner-response-header">
+                        <strong>Response from The Green Gleam</strong>
+                        <span>• March 2026</span>
+                    </div>
+                    <p>Thank you so much for being one of our most loyal clients: it's truly a pleasure to continue to clean your beautiful home!</p>
+                </div>
+            </article>
+
+            <!-- Review 21 - Nikki Miller (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">NM</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Nikki Miller</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Joyce, the owner, is an extremely friendly person who does amazing work! Highly recommend scheduling a cleaning!</p>
+                <div class="owner-response">
+                    <div class="owner-response-header">
+                        <strong>Response from The Green Gleam</strong>
+                        <span>• March 2026</span>
+                    </div>
+                    <p>Thank you for your continued support! We love our clients and the value you bring to our work environment.</p>
+                </div>
+            </article>
+
+            <!-- Review 22 - Christine Enos (Google) -->
+            <article class="review-card" data-date="2026-03" itemscope itemtype="https://schema.org/Review">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">CE</div>
+                        <div class="reviewer-details">
+                            <h4 itemprop="author">Christine Enos</h4>
+                            <div class="review-meta">
+                                <span class="review-date" itemprop="datePublished">March 2026</span>
+                                <span class="new-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg> New</span>
+                                <span class="google-badge">
+                                    <svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                                    Google
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                        <meta itemprop="ratingValue" content="5">
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                </div>
+                <p class="review-text" itemprop="reviewBody">Highly recommend, reliable, affordable and they do great work!</p>
+                <div class="owner-response">
+                    <div class="owner-response-header">
+                        <strong>Response from The Green Gleam</strong>
+                        <span>• March 2026</span>
+                    </div>
+                    <p>Christine it has been and continues to be an absolute pleasure to clean your lovely home. We appreciate your continuous support!</p>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -1318,8 +1851,7 @@
             <h2>Loved Your Experience?</h2>
             <p>Your feedback helps other Rhode Island families find eco-friendly cleaning they can trust. Share your experience on Google - it only takes a minute and means the world to our small business!</p>
             
-            <!-- TODO: Replace # with actual Google review link once GBP is created -->
-            <a href="#" class="google-review-btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://share.google/Zrw3rvAhbRUOk1qzc" class="google-review-btn" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -1436,7 +1968,22 @@
             }
         });
 
-        /* 
+        // Sort Reviews
+        function sortReviews(order) {
+            var grid = document.getElementById('reviews-grid');
+            var cards = Array.prototype.slice.call(grid.querySelectorAll('.review-card'));
+            cards.sort(function(a, b) {
+                var dateA = a.getAttribute('data-date');
+                var dateB = b.getAttribute('data-date');
+                return order === 'newest' ? dateB.localeCompare(dateA) : dateA.localeCompare(dateB);
+            });
+            cards.forEach(function(card) { grid.appendChild(card); });
+        }
+
+        // Sort newest first on page load
+        sortReviews('newest');
+
+        /*
          * GOOGLE REVIEWS INTEGRATION NOTES FOR DEVELOPER:
          * 
          * Option 1: Manual Updates (Current Setup)
